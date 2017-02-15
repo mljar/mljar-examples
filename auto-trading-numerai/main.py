@@ -8,10 +8,10 @@ import numerapi # API to interact with Numer.ai
 from mljar import Mljar # API to build model
 
 # your credentials from numer.ai
-NUMERAI_USER = '*** your mail ***'
-NUMERAI_PASS = '*** your password ***'
+NUMERAI_USER = '######your mail#######'
+NUMERAI_PASS = '######your pass#######'
 # files with Numer.ai data
-TRAIN_FNAME = './numerai_training_data_.csv'
+TRAIN_FNAME = './numerai_training_data.csv'
 TEST_FNAME = './numerai_tournament_data.csv'
 # file with our predictions
 PREDICTIONS_FNAME = './mljar-prediction-raw-data.csv'
