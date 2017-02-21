@@ -1,6 +1,6 @@
 # MLJAR auto-trading example on Numerai data
 
-This is example how MLJAR python package can be used to crunch Numer.ai data. This simple script do following:
+This is an example how MLJAR python package can be used to crunch Numer.ai data. This simple script do following:
 
  1. Login to Numer.ai.
  2. Download dataset.

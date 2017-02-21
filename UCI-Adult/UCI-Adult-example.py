@@ -3,7 +3,12 @@ import numpy as np
 import pandas as pd
 from mljar import Mljar
 
-os.environ["MLJAR_TOKEN"] = "*** your MLJAR_TOKEN goes here ***"
+# please set MLJAR_TOKEN in your ENV
+# export MLJAR_TOKEN=token_here
+# or set it below
+#os.environ["MLJAR_TOKEN"] = "*** your MLJAR_TOKEN goes here ***"
+
+# Read dataset
 # Dataset Adult. It is originally from from UCI repository (https://archive.ics.uci.edu/ml/index.html).
 df = pd.read_csv('data/adult.csv', na_values='?', skipinitialspace=True)
 # Show first lines of our dataset
@@ -13,21 +18,25 @@ df.head()
 input_cols = df.columns[:14]
 target_col = df.columns[14]
 
+
 # Let's define MLJAR project
 mljar = Mljar(project='UCI-Adult',  # project's title that we will use to find it among our projects in MLJAR
-              experiment='First try', # experiment's title
+              experiment='Try tree methods', # experiment's title
               validation='5fold', # we will use 5-fold CV
               metric='auc', # we will use Area Under ROC Curve (AUC) as a metric,
               tuning_mode='Normal', # select tuning mode
-              algorithms=['rfc'], # we want to tune Random Forest and Nueral Network models
+              algorithms=['rfc', 'xgb', 'lgb'], # we want to tune Random Forest, LightGBM and Xgboost models
               create_ensemble=True, # create ensemble of all models,
-              single_algorithm_time_limit=1 # time limit for single algorithm training
+              single_algorithm_time_limit=5 # time limit for single algorithm training in minutes
              )
-# run models prediction
+
+# Run models prediction
 mljar.fit(df[input_cols], df[target_col])
 
-# print out the most useful algorithm
-mljar.selected_algorithm.show()
+# Print out the most useful algorithm
+print str(mljar.selected_algorithm)
 
-# run prediction
+# Run prediction
 pred = mljar.predict(df[input_cols])
+
+print 'Please go to your mljar account and check details of all models'
