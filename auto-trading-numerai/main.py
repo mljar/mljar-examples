@@ -40,7 +40,10 @@ def main():
 
     print 'Create MLJAR project and experiment'
     models = Mljar(project='Auto-trading', experiment="Raw data",
-                    metric='logloss', validation='5fold',
+                    metric='logloss',
+                    validation_kfolds=5, # we will use 5-fold CV with stratify and shuffle
+                    validation_shuffle=True,
+                    validation_stratify=True,
                     algorithms=['xgb', 'lgb', 'mlp'], # select Xgboost, LightGBM and Neural Network
                     tuning_mode='Normal', # number of models to be checked for each algorithm
                     single_algorithm_time_limit=5) # 5 minutes for training single model

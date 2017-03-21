@@ -22,7 +22,9 @@ target_col = df.columns[14]
 # Let's define MLJAR project
 mljar = Mljar(project='UCI-Adult',  # project's title that we will use to find it among our projects in MLJAR
               experiment='Try tree methods', # experiment's title
-              validation='5fold', # we will use 5-fold CV
+              validation_kfolds=5, # we will use 5-fold CV with stratify and shuffle
+              validation_shuffle=True,
+              validation_stratify=True,
               metric='auc', # we will use Area Under ROC Curve (AUC) as a metric,
               tuning_mode='Normal', # select tuning mode
               algorithms=['rfc', 'xgb', 'lgb'], # we want to tune Random Forest, LightGBM and Xgboost models
@@ -36,7 +38,7 @@ mljar.fit(df[input_cols], df[target_col])
 # Print out the most useful algorithm
 print str(mljar.selected_algorithm)
 
-# Run prediction
+# Run prediction on train dataset just for example
 pred = mljar.predict(df[input_cols])
 
 print 'Please go to your mljar account and check details of all models'
