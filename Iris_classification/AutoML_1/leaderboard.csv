@@ -1,0 +1,12 @@
+name,model_type,metric_type,metric_value,train_time
+model_1,Decision Tree,logloss,0.5453226492448378,30.04
+model_2,Decision Tree,logloss,0.6419811899692177,21.25
+model_3,Decision Tree,logloss,0.4569697687554296,16.73
+model_4,Linear,logloss,0.16507067466592637,15.68
+model_11,Random Forest,logloss,0.11891177026579884,28.72
+model_9,Random Forest,logloss,0.24256194594421207,28.73
+model_5,Random Forest,logloss,0.2761028104749779,27.61
+model_6,Random Forest,logloss,0.2536702528991272,29.0
+model_13,Random Forest,logloss,0.1752405529204018,27.86
+model_8,Random Forest,logloss,0.17394416017742964,27.69
+ensemble,Ensemble,logloss,0.11781603875353275,0.36

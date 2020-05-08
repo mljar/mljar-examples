@@ -1,0 +1,175 @@
+{
+    "uid": "72f85565-0fa2-4127-bbba-c2223aeed6b5",
+    "name": "model_11",
+    "preprocessing": [
+        {
+            "categorical_y": {
+                "setosa": 0,
+                "versicolor": 1,
+                "virginica": 2
+            },
+            "ml_task": "multiclass_classification"
+        },
+        {
+            "categorical_y": {
+                "setosa": 0,
+                "versicolor": 1,
+                "virginica": 2
+            },
+            "ml_task": "multiclass_classification"
+        },
+        {
+            "categorical_y": {
+                "setosa": 0,
+                "versicolor": 1,
+                "virginica": 2
+            },
+            "ml_task": "multiclass_classification"
+        },
+        {
+            "categorical_y": {
+                "setosa": 0,
+                "versicolor": 1,
+                "virginica": 2
+            },
+            "ml_task": "multiclass_classification"
+        },
+        {
+            "categorical_y": {
+                "setosa": 0,
+                "versicolor": 1,
+                "virginica": 2
+            },
+            "ml_task": "multiclass_classification"
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Random Forest",
+            "algorithm_short_name": "Random Forest",
+            "uid": "650d2a74-c1c9-49f3-abc7-dcc164737e4a",
+            "params": {
+                "model_type": "Random Forest",
+                "ml_task": "multiclass_classification",
+                "seed": 8,
+                "criterion": "gini",
+                "max_features": 0.7,
+                "min_samples_split": 2,
+                "min_samples_leaf": 1,
+                "num_class": 3
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Random Forest",
+            "algorithm_short_name": "Random Forest",
+            "uid": "66c9d63f-d722-4853-88f6-ab2a672a6817",
+            "params": {
+                "model_type": "Random Forest",
+                "ml_task": "multiclass_classification",
+                "seed": 8,
+                "criterion": "gini",
+                "max_features": 0.7,
+                "min_samples_split": 2,
+                "min_samples_leaf": 1,
+                "num_class": 3
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Random Forest",
+            "algorithm_short_name": "Random Forest",
+            "uid": "555a0bf7-5e2e-48ef-aa75-e49cd1d37d04",
+            "params": {
+                "model_type": "Random Forest",
+                "ml_task": "multiclass_classification",
+                "seed": 8,
+                "criterion": "gini",
+                "max_features": 0.7,
+                "min_samples_split": 2,
+                "min_samples_leaf": 1,
+                "num_class": 3
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Random Forest",
+            "algorithm_short_name": "Random Forest",
+            "uid": "1e510c81-5c90-4060-bbb9-760e23b6c714",
+            "params": {
+                "model_type": "Random Forest",
+                "ml_task": "multiclass_classification",
+                "seed": 8,
+                "criterion": "gini",
+                "max_features": 0.7,
+                "min_samples_split": 2,
+                "min_samples_leaf": 1,
+                "num_class": 3
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Random Forest",
+            "algorithm_short_name": "Random Forest",
+            "uid": "543db1aa-90d4-4abc-918e-6e65e88d226b",
+            "params": {
+                "model_type": "Random Forest",
+                "ml_task": "multiclass_classification",
+                "seed": 8,
+                "criterion": "gini",
+                "max_features": 0.7,
+                "min_samples_split": 2,
+                "min_samples_leaf": 1,
+                "num_class": 3
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "trees_in_step": 10,
+            "train_cant_improve_limit": 5,
+            "min_steps": 5,
+            "max_steps": 500,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {},
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "multiclass_classification"
+        },
+        "validation": {
+            "validation_type": "kfold",
+            "k_folds": 5,
+            "shuffle": true,
+            "stratify": true,
+            "X_train_path": "AutoML_1/X_train.parquet",
+            "y_train_path": "AutoML_1/y_train.parquet",
+            "results_path": "AutoML_1"
+        },
+        "learner": {
+            "model_type": "Random Forest",
+            "ml_task": "multiclass_classification",
+            "seed": 8,
+            "criterion": "gini",
+            "max_features": 0.7,
+            "min_samples_split": 2,
+            "min_samples_leaf": 1,
+            "num_class": 3
+        },
+        "ml_task": "multiclass_classification",
+        "explain_level": 2,
+        "name": "model_11"
+    },
+    "saved": [
+        "AutoML_1/model_11/learner_1.random_forest",
+        "AutoML_1/model_11/learner_2.random_forest",
+        "AutoML_1/model_11/learner_3.random_forest",
+        "AutoML_1/model_11/learner_4.random_forest",
+        "AutoML_1/model_11/learner_5.random_forest"
+    ]
+}

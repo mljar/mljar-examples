@@ -1,0 +1,17 @@
+{
+    "ml_task": "multiclass_classification",
+    "optimize_metric": "logloss",
+    "saved": [
+        "AutoML_1/model_1",
+        "AutoML_1/model_2",
+        "AutoML_1/model_3",
+        "AutoML_1/model_4",
+        "AutoML_1/model_11",
+        "AutoML_1/model_9",
+        "AutoML_1/model_5",
+        "AutoML_1/model_6",
+        "AutoML_1/model_13",
+        "AutoML_1/model_8",
+        "AutoML_1/ensemble"
+    ]
+}

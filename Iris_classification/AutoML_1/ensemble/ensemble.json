@@ -1,0 +1,15 @@
+{
+    "name": "ensemble",
+    "ml_task": "multiclass_classification",
+    "optimize_metric": "logloss",
+    "selected_models": [
+        {
+            "model": "model_11",
+            "repeat": 9.0
+        },
+        {
+            "model": "model_4",
+            "repeat": 1.0
+        }
+    ]
+}

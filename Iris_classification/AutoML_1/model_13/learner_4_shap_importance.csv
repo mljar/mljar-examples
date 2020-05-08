@@ -1,0 +1,5 @@
+feature,shap_importance
+petal length (cm),0.5075373411911951
+petal width (cm),0.36397370005855667
+sepal length (cm),0.23189284483438732
+sepal width (cm),0.1635788330202275

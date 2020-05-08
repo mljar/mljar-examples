@@ -1,0 +1,162 @@
+{
+    "uid": "89707b71-83b7-42ab-a727-6f4930d12f46",
+    "name": "model_3",
+    "preprocessing": [
+        {
+            "categorical_y": {
+                "setosa": 0,
+                "versicolor": 1,
+                "virginica": 2
+            },
+            "ml_task": "multiclass_classification"
+        },
+        {
+            "categorical_y": {
+                "setosa": 0,
+                "versicolor": 1,
+                "virginica": 2
+            },
+            "ml_task": "multiclass_classification"
+        },
+        {
+            "categorical_y": {
+                "setosa": 0,
+                "versicolor": 1,
+                "virginica": 2
+            },
+            "ml_task": "multiclass_classification"
+        },
+        {
+            "categorical_y": {
+                "setosa": 0,
+                "versicolor": 1,
+                "virginica": 2
+            },
+            "ml_task": "multiclass_classification"
+        },
+        {
+            "categorical_y": {
+                "setosa": 0,
+                "versicolor": 1,
+                "virginica": 2
+            },
+            "ml_task": "multiclass_classification"
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Decision Tree",
+            "algorithm_short_name": "Decision Tree",
+            "uid": "e7948c6d-3dd0-460a-83fe-96ba51f9f552",
+            "params": {
+                "model_type": "Decision Tree",
+                "ml_task": "multiclass_classification",
+                "seed": 4,
+                "criterion": "entropy",
+                "max_depth": 1,
+                "num_class": 3
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Decision Tree",
+            "algorithm_short_name": "Decision Tree",
+            "uid": "a7bc3afc-2eb0-45e1-b9e2-880ecb879854",
+            "params": {
+                "model_type": "Decision Tree",
+                "ml_task": "multiclass_classification",
+                "seed": 4,
+                "criterion": "entropy",
+                "max_depth": 1,
+                "num_class": 3
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Decision Tree",
+            "algorithm_short_name": "Decision Tree",
+            "uid": "6073caaa-f5ff-4ea5-b473-6926a37204e4",
+            "params": {
+                "model_type": "Decision Tree",
+                "ml_task": "multiclass_classification",
+                "seed": 4,
+                "criterion": "entropy",
+                "max_depth": 1,
+                "num_class": 3
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Decision Tree",
+            "algorithm_short_name": "Decision Tree",
+            "uid": "1ef46dcd-4b45-4123-964c-c410c7c45958",
+            "params": {
+                "model_type": "Decision Tree",
+                "ml_task": "multiclass_classification",
+                "seed": 4,
+                "criterion": "entropy",
+                "max_depth": 1,
+                "num_class": 3
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Decision Tree",
+            "algorithm_short_name": "Decision Tree",
+            "uid": "039d5765-de94-445b-b9e5-55b462a285f8",
+            "params": {
+                "model_type": "Decision Tree",
+                "ml_task": "multiclass_classification",
+                "seed": 4,
+                "criterion": "entropy",
+                "max_depth": 1,
+                "num_class": 3
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "trees_in_step": 1,
+            "train_cant_improve_limit": 0,
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {},
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "multiclass_classification"
+        },
+        "validation": {
+            "validation_type": "kfold",
+            "k_folds": 5,
+            "shuffle": true,
+            "stratify": true,
+            "X_train_path": "AutoML_1/X_train.parquet",
+            "y_train_path": "AutoML_1/y_train.parquet",
+            "results_path": "AutoML_1"
+        },
+        "learner": {
+            "model_type": "Decision Tree",
+            "ml_task": "multiclass_classification",
+            "seed": 4,
+            "criterion": "entropy",
+            "max_depth": 1,
+            "num_class": 3
+        },
+        "ml_task": "multiclass_classification",
+        "explain_level": 2,
+        "name": "model_3"
+    },
+    "saved": [
+        "AutoML_1/model_3/learner_1.decision_tree",
+        "AutoML_1/model_3/learner_2.decision_tree",
+        "AutoML_1/model_3/learner_3.decision_tree",
+        "AutoML_1/model_3/learner_4.decision_tree",
+        "AutoML_1/model_3/learner_5.decision_tree"
+    ]
+}
