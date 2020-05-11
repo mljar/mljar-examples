@@ -1,0 +1,15 @@
+feature,shap_importance
+relationship,0.17302534147637255
+education-num,0.08725027746359255
+capital-gain,0.04836529214258672
+capital-loss,0.0055647617982371314
+age,0.001324084104998758
+fnlwgt,0.00025575735470184457
+workclass,0.0
+education,0.0
+marital-status,0.0
+occupation,0.0
+race,0.0
+sex,0.0
+hours-per-week,0.0
+native-country,0.0

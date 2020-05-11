@@ -1,0 +1,15 @@
+feature,mean_importance
+workclass,0.0
+education,0.0
+marital-status,0.0
+occupation,0.0
+race,0.0
+sex,0.0
+hours-per-week,0.0
+native-country,0.0
+fnlwgt,0.0002877298667462003
+capital-loss,0.004193048784814602
+age,0.04231786078790425
+education-num,0.07685847273955972
+relationship,0.2428338501799423
+capital-gain,0.4620878592885068

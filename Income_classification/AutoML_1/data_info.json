@@ -1,0 +1,21 @@
+{
+    "columns": [
+        "age",
+        "workclass",
+        "fnlwgt",
+        "education",
+        "education-num",
+        "marital-status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "capital-gain",
+        "capital-loss",
+        "hours-per-week",
+        "native-country"
+    ],
+    "rows": 26048,
+    "cols": 14,
+    "target_is_numeric": false
+}

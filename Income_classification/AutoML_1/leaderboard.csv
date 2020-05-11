@@ -1,0 +1,45 @@
+name,model_type,metric_type,metric_value,train_time
+model_1,Baseline,logloss,0.553215793331749,0.57
+model_2,Linear,logloss,0.3860933976118958,16.86
+model_3,Decision Tree,logloss,0.370510137386051,32.1
+model_4,Decision Tree,logloss,0.3506798809988888,38.31
+model_5,Decision Tree,logloss,0.470718258150962,25.67
+model_35,LightGBM,logloss,0.31999646365796863,89.21
+model_24,Extra Trees,logloss,0.3167643790476965,758.36
+model_47,CatBoost,logloss,0.2877989651518992,43.44
+model_28,LightGBM,logloss,0.30679158731556516,95.62
+model_54,CatBoost,logloss,0.29167401441383384,43.83
+model_32,LightGBM,logloss,0.2853425277632073,37.26
+model_15,Random Forest,logloss,0.3032932375218784,260.59
+model_44,Xgboost,logloss,0.2829673358652106,64.23
+model_51,CatBoost,logloss,0.3618521081892141,43.54
+model_36,Xgboost,logloss,0.282682207538588,42.8
+model_42,Xgboost,logloss,0.2880039006634775,61.22
+model_8,Random Forest,logloss,0.30141981473457874,261.95
+model_37,Xgboost,logloss,0.2918198696106528,38.75
+model_49,CatBoost,logloss,0.2838902948855167,31.79
+model_11,Random Forest,logloss,0.30330339853723987,200.62
+model_53,CatBoost,logloss,0.2868705097182103,43.73
+model_39,Xgboost,logloss,0.29613754931415565,45.37
+model_27,LightGBM,logloss,0.3111625623771238,68.87
+model_52,CatBoost,logloss,0.2837292948509315,26.69
+model_34,LightGBM,logloss,0.28838932137763457,54.96
+model_55,CatBoost,logloss,0.29032933160561664,43.68
+model_31,LightGBM,logloss,0.2878659004369694,50.21
+model_41,Xgboost,logloss,0.2863503383257656,44.36
+model_48,CatBoost,logloss,0.3667811742589572,43.65
+model_29,LightGBM,logloss,0.317109623881578,76.78
+model_38,Xgboost,logloss,0.29167905367736524,41.4
+model_46,CatBoost,logloss,0.2899337939975367,43.92
+model_30,LightGBM,logloss,0.30650961809461713,152.52
+model_33,LightGBM,logloss,0.2989227698708249,90.55
+model_26,LightGBM,logloss,0.3310748251442278,88.7
+model_45,Xgboost,logloss,0.2864550189914367,91.6
+model_43,Xgboost,logloss,0.2963704460734534,82.26
+model_50,CatBoost,logloss,0.2893977151485104,43.63
+model_56,CatBoost,logloss,0.34019366148159835,27.88
+model_57,CatBoost,logloss,0.3461848247818913,10.35
+model_58,CatBoost,logloss,0.4233132906978434,10.47
+model_59,CatBoost,logloss,0.34770271016480225,3.38
+model_60,CatBoost,logloss,0.423381436131968,3.53
+ensemble,Ensemble,logloss,0.28025737201637557,18.81

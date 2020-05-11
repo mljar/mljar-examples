@@ -1,0 +1,138 @@
+{
+    "uid": "b3107bac-096d-4a5f-97d5-a8d34d21ebaa",
+    "name": "model_1",
+    "preprocessing": [
+        {
+            "categorical_y": {
+                "<=50K": 0,
+                ">50K": 1
+            },
+            "ml_task": "binary_classification"
+        },
+        {
+            "categorical_y": {
+                "<=50K": 0,
+                ">50K": 1
+            },
+            "ml_task": "binary_classification"
+        },
+        {
+            "categorical_y": {
+                "<=50K": 0,
+                ">50K": 1
+            },
+            "ml_task": "binary_classification"
+        },
+        {
+            "categorical_y": {
+                "<=50K": 0,
+                ">50K": 1
+            },
+            "ml_task": "binary_classification"
+        },
+        {
+            "categorical_y": {
+                "<=50K": 0,
+                ">50K": 1
+            },
+            "ml_task": "binary_classification"
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Baseline Classifier",
+            "algorithm_short_name": "Baseline",
+            "uid": "bfdb30df-2a07-4ef3-a228-804084ac9a06",
+            "params": {
+                "model_type": "Baseline",
+                "ml_task": "binary_classification",
+                "seed": 2
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Baseline Classifier",
+            "algorithm_short_name": "Baseline",
+            "uid": "7063f6a1-91a2-4088-9d26-8a1b0ae83070",
+            "params": {
+                "model_type": "Baseline",
+                "ml_task": "binary_classification",
+                "seed": 2
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Baseline Classifier",
+            "algorithm_short_name": "Baseline",
+            "uid": "5240e694-b14f-441b-9b49-ca73cc6acd8e",
+            "params": {
+                "model_type": "Baseline",
+                "ml_task": "binary_classification",
+                "seed": 2
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Baseline Classifier",
+            "algorithm_short_name": "Baseline",
+            "uid": "6816a955-4587-4c79-b4f3-18fddf5fb733",
+            "params": {
+                "model_type": "Baseline",
+                "ml_task": "binary_classification",
+                "seed": 2
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Baseline Classifier",
+            "algorithm_short_name": "Baseline",
+            "uid": "76525fda-63c8-47b8-a88a-c9d139981758",
+            "params": {
+                "model_type": "Baseline",
+                "ml_task": "binary_classification",
+                "seed": 2
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {},
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation": {
+            "validation_type": "kfold",
+            "k_folds": 5,
+            "shuffle": true,
+            "stratify": true,
+            "X_train_path": "AutoML_1/X_train.parquet",
+            "y_train_path": "AutoML_1/y_train.parquet",
+            "results_path": "AutoML_1"
+        },
+        "learner": {
+            "model_type": "Baseline",
+            "ml_task": "binary_classification",
+            "seed": 2
+        },
+        "ml_task": "binary_classification",
+        "explain_level": 2,
+        "name": "model_1"
+    },
+    "saved": [
+        "AutoML_1/model_1/learner_1.baseline",
+        "AutoML_1/model_1/learner_2.baseline",
+        "AutoML_1/model_1/learner_3.baseline",
+        "AutoML_1/model_1/learner_4.baseline",
+        "AutoML_1/model_1/learner_5.baseline"
+    ],
+    "threshold": 0.21766879408800804
+}

@@ -1,0 +1,225 @@
+{
+    "uid": "226476e8-b8a5-4cb3-850a-83f85772417f",
+    "name": "model_60",
+    "preprocessing": [
+        {
+            "missing_values": [
+                {
+                    "fill_method": "na_fill_median",
+                    "fill_params": {
+                        "workclass": "Private",
+                        "occupation": "Prof-specialty",
+                        "native-country": "United-States"
+                    }
+                }
+            ],
+            "categorical_y": {
+                "<=50K": 0,
+                ">50K": 1
+            },
+            "ml_task": "binary_classification"
+        },
+        {
+            "missing_values": [
+                {
+                    "fill_method": "na_fill_median",
+                    "fill_params": {
+                        "workclass": "Private",
+                        "occupation": "Prof-specialty",
+                        "native-country": "United-States"
+                    }
+                }
+            ],
+            "categorical_y": {
+                "<=50K": 0,
+                ">50K": 1
+            },
+            "ml_task": "binary_classification"
+        },
+        {
+            "missing_values": [
+                {
+                    "fill_method": "na_fill_median",
+                    "fill_params": {
+                        "workclass": "Private",
+                        "occupation": "Prof-specialty",
+                        "native-country": "United-States"
+                    }
+                }
+            ],
+            "categorical_y": {
+                "<=50K": 0,
+                ">50K": 1
+            },
+            "ml_task": "binary_classification"
+        },
+        {
+            "missing_values": [
+                {
+                    "fill_method": "na_fill_median",
+                    "fill_params": {
+                        "workclass": "Private",
+                        "occupation": "Prof-specialty",
+                        "native-country": "United-States"
+                    }
+                }
+            ],
+            "categorical_y": {
+                "<=50K": 0,
+                ">50K": 1
+            },
+            "ml_task": "binary_classification"
+        },
+        {
+            "missing_values": [
+                {
+                    "fill_method": "na_fill_median",
+                    "fill_params": {
+                        "workclass": "Private",
+                        "occupation": "Prof-specialty",
+                        "native-country": "United-States"
+                    }
+                }
+            ],
+            "categorical_y": {
+                "<=50K": 0,
+                ">50K": 1
+            },
+            "ml_task": "binary_classification"
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.23",
+            "algorithm_name": "CatBoost",
+            "algorithm_short_name": "CatBoost",
+            "uid": "73594001-ace0-4a34-93d7-b86cefa9ff44",
+            "params": {
+                "model_type": "CatBoost",
+                "ml_task": "binary_classification",
+                "seed": 9,
+                "learning_rate": 0.1,
+                "depth": 8,
+                "rsm": 0.9,
+                "l2_leaf_reg": 7
+            }
+        },
+        {
+            "library_version": "0.23",
+            "algorithm_name": "CatBoost",
+            "algorithm_short_name": "CatBoost",
+            "uid": "46a81b8e-3154-440d-9b4f-e7e59036e131",
+            "params": {
+                "model_type": "CatBoost",
+                "ml_task": "binary_classification",
+                "seed": 9,
+                "learning_rate": 0.1,
+                "depth": 8,
+                "rsm": 0.9,
+                "l2_leaf_reg": 7
+            }
+        },
+        {
+            "library_version": "0.23",
+            "algorithm_name": "CatBoost",
+            "algorithm_short_name": "CatBoost",
+            "uid": "6fa8cfe6-f7b2-4e4e-9399-0b81857c08c1",
+            "params": {
+                "model_type": "CatBoost",
+                "ml_task": "binary_classification",
+                "seed": 9,
+                "learning_rate": 0.1,
+                "depth": 8,
+                "rsm": 0.9,
+                "l2_leaf_reg": 7
+            }
+        },
+        {
+            "library_version": "0.23",
+            "algorithm_name": "CatBoost",
+            "algorithm_short_name": "CatBoost",
+            "uid": "7111cbd0-dc30-4355-a7a2-cf05dd982fae",
+            "params": {
+                "model_type": "CatBoost",
+                "ml_task": "binary_classification",
+                "seed": 9,
+                "learning_rate": 0.1,
+                "depth": 8,
+                "rsm": 0.9,
+                "l2_leaf_reg": 7
+            }
+        },
+        {
+            "library_version": "0.23",
+            "algorithm_name": "CatBoost",
+            "algorithm_short_name": "CatBoost",
+            "uid": "53834cb5-ab6d-44a4-9c5c-ee0440d32535",
+            "params": {
+                "model_type": "CatBoost",
+                "ml_task": "binary_classification",
+                "seed": 9,
+                "learning_rate": 0.1,
+                "depth": 8,
+                "rsm": 0.9,
+                "l2_leaf_reg": 7
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "trees_in_step": 10,
+            "train_cant_improve_limit": 5,
+            "min_steps": 5,
+            "max_steps": 500,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "workclass": [
+                    "na_fill_median"
+                ],
+                "occupation": [
+                    "na_fill_median"
+                ],
+                "native-country": [
+                    "na_fill_median"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation": {
+            "validation_type": "kfold",
+            "k_folds": 5,
+            "shuffle": true,
+            "stratify": true,
+            "X_train_path": "AutoML_1/X_train.parquet",
+            "y_train_path": "AutoML_1/y_train.parquet",
+            "results_path": "AutoML_1"
+        },
+        "learner": {
+            "model_type": "CatBoost",
+            "ml_task": "binary_classification",
+            "seed": 9,
+            "learning_rate": 0.1,
+            "depth": 8,
+            "rsm": 0.9,
+            "l2_leaf_reg": 7
+        },
+        "ml_task": "binary_classification",
+        "explain_level": 2,
+        "name": "model_60"
+    },
+    "saved": [
+        "AutoML_1/model_60/learner_1.catboost",
+        "AutoML_1/model_60/learner_2.catboost",
+        "AutoML_1/model_60/learner_3.catboost",
+        "AutoML_1/model_60/learner_4.catboost",
+        "AutoML_1/model_60/learner_5.catboost"
+    ],
+    "threshold": 0.38082932295514793
+}
