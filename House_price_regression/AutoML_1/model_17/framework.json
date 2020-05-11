@@ -1,0 +1,237 @@
+{
+    "uid": "4a6731b6-c2af-4b2c-9ed0-58ec37db6670",
+    "name": "model_17",
+    "preprocessing": [
+        {
+            "scale_y": {
+                "scale": [
+                    0.5958440782649306
+                ],
+                "mean": [
+                    2.7303275865089667
+                ],
+                "var": [
+                    0.3550301656033847
+                ],
+                "n_samples_seen": 323,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    5.6
+                ]
+            },
+            "ml_task": "regression"
+        },
+        {
+            "scale_y": {
+                "scale": [
+                    0.5732733136096282
+                ],
+                "mean": [
+                    2.7666547158724115
+                ],
+                "var": [
+                    0.32864229209696305
+                ],
+                "n_samples_seen": 323,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    5.0
+                ]
+            },
+            "ml_task": "regression"
+        },
+        {
+            "scale_y": {
+                "scale": [
+                    0.5837104984713019
+                ],
+                "mean": [
+                    2.7624399306224077
+                ],
+                "var": [
+                    0.34071794602561567
+                ],
+                "n_samples_seen": 323,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    5.0
+                ]
+            },
+            "ml_task": "regression"
+        },
+        {
+            "scale_y": {
+                "scale": [
+                    0.5671579417396811
+                ],
+                "mean": [
+                    2.7561922602248683
+                ],
+                "var": [
+                    0.3216681308783915
+                ],
+                "n_samples_seen": 323,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    5.0
+                ]
+            },
+            "ml_task": "regression"
+        },
+        {
+            "scale_y": {
+                "scale": [
+                    0.5920756285149357
+                ],
+                "mean": [
+                    2.752511109994634
+                ],
+                "var": [
+                    0.3505535498813561
+                ],
+                "n_samples_seen": 324,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    5.0
+                ]
+            },
+            "ml_task": "regression"
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Extra Trees Regressor",
+            "algorithm_short_name": "Extra Trees",
+            "uid": "59fa7891-826a-4c0c-a80e-a83cc5dd3592",
+            "params": {
+                "model_type": "Extra Trees",
+                "ml_task": "regression",
+                "seed": 3,
+                "criterion": "mae",
+                "max_features": 0.6,
+                "min_samples_split": 8,
+                "min_samples_leaf": 20
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Extra Trees Regressor",
+            "algorithm_short_name": "Extra Trees",
+            "uid": "6bcd4aa2-9b54-4a81-b949-80f488fa66b6",
+            "params": {
+                "model_type": "Extra Trees",
+                "ml_task": "regression",
+                "seed": 3,
+                "criterion": "mae",
+                "max_features": 0.6,
+                "min_samples_split": 8,
+                "min_samples_leaf": 20
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Extra Trees Regressor",
+            "algorithm_short_name": "Extra Trees",
+            "uid": "f6154c0a-a84d-4312-82ec-a8d30fe16ac9",
+            "params": {
+                "model_type": "Extra Trees",
+                "ml_task": "regression",
+                "seed": 3,
+                "criterion": "mae",
+                "max_features": 0.6,
+                "min_samples_split": 8,
+                "min_samples_leaf": 20
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Extra Trees Regressor",
+            "algorithm_short_name": "Extra Trees",
+            "uid": "b46bdd9c-21d5-46e2-8bcf-436e6b131a33",
+            "params": {
+                "model_type": "Extra Trees",
+                "ml_task": "regression",
+                "seed": 3,
+                "criterion": "mae",
+                "max_features": 0.6,
+                "min_samples_split": 8,
+                "min_samples_leaf": 20
+            }
+        },
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Extra Trees Regressor",
+            "algorithm_short_name": "Extra Trees",
+            "uid": "bc2fe36a-e979-48dc-a994-2f11095e81ce",
+            "params": {
+                "model_type": "Extra Trees",
+                "ml_task": "regression",
+                "seed": 3,
+                "criterion": "mae",
+                "max_features": 0.6,
+                "min_samples_split": 8,
+                "min_samples_leaf": 20
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "trees_in_step": 10,
+            "train_cant_improve_limit": 5,
+            "max_steps": 500,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {},
+            "target_preprocessing": [
+                "na_exclude",
+                "scale_log_and_normal"
+            ],
+            "ml_task": "regression"
+        },
+        "validation": {
+            "validation_type": "kfold",
+            "k_folds": 5,
+            "shuffle": true,
+            "X_train_path": "AutoML_1/X_train.parquet",
+            "y_train_path": "AutoML_1/y_train.parquet",
+            "results_path": "AutoML_1"
+        },
+        "learner": {
+            "model_type": "Extra Trees",
+            "ml_task": "regression",
+            "seed": 3,
+            "criterion": "mae",
+            "max_features": 0.6,
+            "min_samples_split": 8,
+            "min_samples_leaf": 20
+        },
+        "ml_task": "regression",
+        "explain_level": 2,
+        "name": "model_17"
+    },
+    "saved": [
+        "AutoML_1/model_17/learner_1.extra_trees",
+        "AutoML_1/model_17/learner_2.extra_trees",
+        "AutoML_1/model_17/learner_3.extra_trees",
+        "AutoML_1/model_17/learner_4.extra_trees",
+        "AutoML_1/model_17/learner_5.extra_trees"
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "name": "ensemble",
+    "ml_task": "regression",
+    "optimize_metric": "mse",
+    "selected_models": [
+        {
+            "model": "model_22",
+            "repeat": 2.0
+        },
+        {
+            "model": "model_3",
+            "repeat": 8.0
+        },
+        {
+            "model": "model_33",
+            "repeat": 15.0
+        },
+        {
+            "model": "model_43",
+            "repeat": 12.0
+        },
+        {
+            "model": "model_47",
+            "repeat": 12.0
+        },
+        {
+            "model": "model_62",
+            "repeat": 15.0
+        },
+        {
+            "model": "model_75",
+            "repeat": 7.0
+        },
+        {
+            "model": "model_79",
+            "repeat": 2.0
+        },
+        {
+            "model": "model_80",
+            "repeat": 1.0
+        }
+    ]
+}

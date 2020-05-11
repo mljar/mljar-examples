@@ -1,0 +1,20 @@
+{
+    "columns": [
+        "CRIM",
+        "ZN",
+        "INDUS",
+        "CHAS",
+        "NOX",
+        "RM",
+        "AGE",
+        "DIS",
+        "RAD",
+        "TAX",
+        "PTRATIO",
+        "B",
+        "LSTAT"
+    ],
+    "rows": 404,
+    "cols": 13,
+    "target_is_numeric": true
+}

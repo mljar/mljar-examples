@@ -1,0 +1,256 @@
+{
+    "uid": "86a37b19-7f54-419a-8924-b45aead3bf6e",
+    "name": "model_68",
+    "preprocessing": [
+        {
+            "scale_y": {
+                "scale": [
+                    0.5958440782649306
+                ],
+                "mean": [
+                    2.7303275865089667
+                ],
+                "var": [
+                    0.3550301656033847
+                ],
+                "n_samples_seen": 323,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    5.6
+                ]
+            },
+            "ml_task": "regression"
+        },
+        {
+            "scale_y": {
+                "scale": [
+                    0.5732733136096282
+                ],
+                "mean": [
+                    2.7666547158724115
+                ],
+                "var": [
+                    0.32864229209696305
+                ],
+                "n_samples_seen": 323,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    5.0
+                ]
+            },
+            "ml_task": "regression"
+        },
+        {
+            "scale_y": {
+                "scale": [
+                    0.5837104984713019
+                ],
+                "mean": [
+                    2.7624399306224077
+                ],
+                "var": [
+                    0.34071794602561567
+                ],
+                "n_samples_seen": 323,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    5.0
+                ]
+            },
+            "ml_task": "regression"
+        },
+        {
+            "scale_y": {
+                "scale": [
+                    0.5671579417396811
+                ],
+                "mean": [
+                    2.7561922602248683
+                ],
+                "var": [
+                    0.3216681308783915
+                ],
+                "n_samples_seen": 323,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    5.0
+                ]
+            },
+            "ml_task": "regression"
+        },
+        {
+            "scale_y": {
+                "scale": [
+                    0.5920756285149357
+                ],
+                "mean": [
+                    2.752511109994634
+                ],
+                "var": [
+                    0.3505535498813561
+                ],
+                "n_samples_seen": 324,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    5.0
+                ]
+            },
+            "ml_task": "regression"
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "2.3.1",
+            "algorithm_name": "LightGBM",
+            "algorithm_short_name": "LightGBM",
+            "uid": "f3029691-20bb-455b-838d-9d94da88e847",
+            "params": {
+                "model_type": "LightGBM",
+                "ml_task": "regression",
+                "seed": 5,
+                "objective": "regression",
+                "metric": "l2",
+                "num_leaves": 256,
+                "learning_rate": 0.025,
+                "feature_fraction": 0.5,
+                "bagging_fraction": 0.3,
+                "bagging_freq": 0
+            }
+        },
+        {
+            "library_version": "2.3.1",
+            "algorithm_name": "LightGBM",
+            "algorithm_short_name": "LightGBM",
+            "uid": "d304250d-cab1-42b5-a671-8d9e047fb37c",
+            "params": {
+                "model_type": "LightGBM",
+                "ml_task": "regression",
+                "seed": 5,
+                "objective": "regression",
+                "metric": "l2",
+                "num_leaves": 256,
+                "learning_rate": 0.025,
+                "feature_fraction": 0.5,
+                "bagging_fraction": 0.3,
+                "bagging_freq": 0
+            }
+        },
+        {
+            "library_version": "2.3.1",
+            "algorithm_name": "LightGBM",
+            "algorithm_short_name": "LightGBM",
+            "uid": "2c3924d6-691f-4e8d-94bd-d4f2f9d9ed9b",
+            "params": {
+                "model_type": "LightGBM",
+                "ml_task": "regression",
+                "seed": 5,
+                "objective": "regression",
+                "metric": "l2",
+                "num_leaves": 256,
+                "learning_rate": 0.025,
+                "feature_fraction": 0.5,
+                "bagging_fraction": 0.3,
+                "bagging_freq": 0
+            }
+        },
+        {
+            "library_version": "2.3.1",
+            "algorithm_name": "LightGBM",
+            "algorithm_short_name": "LightGBM",
+            "uid": "8092abad-8643-4ce9-a812-bb8fc46197b0",
+            "params": {
+                "model_type": "LightGBM",
+                "ml_task": "regression",
+                "seed": 5,
+                "objective": "regression",
+                "metric": "l2",
+                "num_leaves": 256,
+                "learning_rate": 0.025,
+                "feature_fraction": 0.5,
+                "bagging_fraction": 0.3,
+                "bagging_freq": 0
+            }
+        },
+        {
+            "library_version": "2.3.1",
+            "algorithm_name": "LightGBM",
+            "algorithm_short_name": "LightGBM",
+            "uid": "4ed489de-04bf-40a0-8035-8b460632f29b",
+            "params": {
+                "model_type": "LightGBM",
+                "ml_task": "regression",
+                "seed": 5,
+                "objective": "regression",
+                "metric": "l2",
+                "num_leaves": 256,
+                "learning_rate": 0.025,
+                "feature_fraction": 0.5,
+                "bagging_fraction": 0.3,
+                "bagging_freq": 0
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "trees_in_step": 10,
+            "train_cant_improve_limit": 5,
+            "min_steps": 5,
+            "max_steps": 500,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {},
+            "target_preprocessing": [
+                "na_exclude",
+                "scale_log_and_normal"
+            ],
+            "ml_task": "regression"
+        },
+        "validation": {
+            "validation_type": "kfold",
+            "k_folds": 5,
+            "shuffle": true,
+            "X_train_path": "AutoML_1/X_train.parquet",
+            "y_train_path": "AutoML_1/y_train.parquet",
+            "results_path": "AutoML_1"
+        },
+        "learner": {
+            "model_type": "LightGBM",
+            "ml_task": "regression",
+            "seed": 5,
+            "objective": "regression",
+            "metric": "l2",
+            "num_leaves": 256,
+            "learning_rate": 0.025,
+            "feature_fraction": 0.5,
+            "bagging_fraction": 0.3,
+            "bagging_freq": 0
+        },
+        "ml_task": "regression",
+        "explain_level": 2,
+        "name": "model_68"
+    },
+    "saved": [
+        "AutoML_1/model_68/learner_1.lightgbm",
+        "AutoML_1/model_68/learner_2.lightgbm",
+        "AutoML_1/model_68/learner_3.lightgbm",
+        "AutoML_1/model_68/learner_4.lightgbm",
+        "AutoML_1/model_68/learner_5.lightgbm"
+    ]
+}
