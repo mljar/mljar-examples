@@ -17,5 +17,55 @@
     ],
     "rows": 26048,
     "cols": 14,
-    "target_is_numeric": false
+    "target_is_numeric": false,
+    "columns_info": {
+        "age": [
+            "scale"
+        ],
+        "workclass": [
+            "missing_values",
+            "categorical"
+        ],
+        "fnlwgt": [
+            "scale"
+        ],
+        "education": [
+            "categorical"
+        ],
+        "education-num": [
+            "scale"
+        ],
+        "marital-status": [
+            "categorical"
+        ],
+        "occupation": [
+            "missing_values",
+            "categorical"
+        ],
+        "relationship": [
+            "categorical"
+        ],
+        "race": [
+            "categorical"
+        ],
+        "sex": [
+            "categorical"
+        ],
+        "capital-gain": [
+            "scale"
+        ],
+        "capital-loss": [
+            "scale"
+        ],
+        "hours-per-week": [
+            "scale"
+        ],
+        "native-country": [
+            "missing_values",
+            "categorical"
+        ]
+    },
+    "target_info": [
+        "convert_0_1"
+    ]
 }

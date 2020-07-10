@@ -1,0 +1,234 @@
+{
+    "uid": "c4b9ef76-0069-4e59-afae-343b3cbeb920",
+    "name": "2_DecisionTree",
+    "preprocessing": [
+        {
+            "missing_values": [
+                {
+                    "fill_method": "na_fill_median",
+                    "fill_params": {
+                        "workclass": "Private",
+                        "occupation": "Prof-specialty",
+                        "native-country": "United-States"
+                    }
+                }
+            ],
+            "categorical": [
+                {
+                    "convert_method": "categorical_to_int",
+                    "convert_params": {
+                        "workclass": {
+                            "Federal-gov": 0,
+                            "Local-gov": 1,
+                            "Never-worked": 2,
+                            "Private": 3,
+                            "Self-emp-inc": 4,
+                            "Self-emp-not-inc": 5,
+                            "State-gov": 6,
+                            "Without-pay": 7
+                        },
+                        "education": {
+                            "10th": 0,
+                            "11th": 1,
+                            "12th": 2,
+                            "1st-4th": 3,
+                            "5th-6th": 4,
+                            "7th-8th": 5,
+                            "9th": 6,
+                            "Assoc-acdm": 7,
+                            "Assoc-voc": 8,
+                            "Bachelors": 9,
+                            "Doctorate": 10,
+                            "HS-grad": 11,
+                            "Masters": 12,
+                            "Preschool": 13,
+                            "Prof-school": 14,
+                            "Some-college": 15
+                        },
+                        "marital-status": {
+                            "Divorced": 0,
+                            "Married-AF-spouse": 1,
+                            "Married-civ-spouse": 2,
+                            "Married-spouse-absent": 3,
+                            "Never-married": 4,
+                            "Separated": 5,
+                            "Widowed": 6
+                        },
+                        "occupation": {
+                            "Adm-clerical": 0,
+                            "Armed-Forces": 1,
+                            "Craft-repair": 2,
+                            "Exec-managerial": 3,
+                            "Farming-fishing": 4,
+                            "Handlers-cleaners": 5,
+                            "Machine-op-inspct": 6,
+                            "Other-service": 7,
+                            "Priv-house-serv": 8,
+                            "Prof-specialty": 9,
+                            "Protective-serv": 10,
+                            "Sales": 11,
+                            "Tech-support": 12,
+                            "Transport-moving": 13
+                        },
+                        "relationship": {
+                            "Husband": 0,
+                            "Not-in-family": 1,
+                            "Other-relative": 2,
+                            "Own-child": 3,
+                            "Unmarried": 4,
+                            "Wife": 5
+                        },
+                        "race": {
+                            "Amer-Indian-Eskimo": 0,
+                            "Asian-Pac-Islander": 1,
+                            "Black": 2,
+                            "Other": 3,
+                            "White": 4
+                        },
+                        "sex": {
+                            "Female": 0,
+                            "Male": 1
+                        },
+                        "native-country": {
+                            "Cambodia": 0,
+                            "Canada": 1,
+                            "China": 2,
+                            "Columbia": 3,
+                            "Cuba": 4,
+                            "Dominican-Republic": 5,
+                            "Ecuador": 6,
+                            "El-Salvador": 7,
+                            "England": 8,
+                            "France": 9,
+                            "Germany": 10,
+                            "Greece": 11,
+                            "Guatemala": 12,
+                            "Haiti": 13,
+                            "Honduras": 14,
+                            "Hong": 15,
+                            "Hungary": 16,
+                            "India": 17,
+                            "Iran": 18,
+                            "Ireland": 19,
+                            "Italy": 20,
+                            "Jamaica": 21,
+                            "Japan": 22,
+                            "Laos": 23,
+                            "Mexico": 24,
+                            "Nicaragua": 25,
+                            "Outlying-US(Guam-USVI-etc)": 26,
+                            "Peru": 27,
+                            "Philippines": 28,
+                            "Poland": 29,
+                            "Portugal": 30,
+                            "Puerto-Rico": 31,
+                            "Scotland": 32,
+                            "South": 33,
+                            "Taiwan": 34,
+                            "Thailand": 35,
+                            "Trinadad&Tobago": 36,
+                            "United-States": 37,
+                            "Vietnam": 38,
+                            "Yugoslavia": 39
+                        }
+                    }
+                }
+            ],
+            "categorical_y": {
+                "<=50K": 0,
+                ">50K": 1
+            },
+            "ml_task": "binary_classification"
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Decision Tree",
+            "algorithm_short_name": "Decision Tree",
+            "uid": "1b3bf0a5-55ab-44e5-8382-96133bdc3a43",
+            "params": {
+                "model_type": "Decision Tree",
+                "ml_task": "binary_classification",
+                "seed": 1235,
+                "criterion": "gini",
+                "max_depth": 3,
+                "explain_level": 2
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "trees_in_step": 1,
+            "train_cant_improve_limit": 0,
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "workclass": [
+                    "na_fill_median",
+                    "categorical_to_int"
+                ],
+                "education": [
+                    "categorical_to_int"
+                ],
+                "marital-status": [
+                    "categorical_to_int"
+                ],
+                "occupation": [
+                    "na_fill_median",
+                    "categorical_to_int"
+                ],
+                "relationship": [
+                    "categorical_to_int"
+                ],
+                "race": [
+                    "categorical_to_int"
+                ],
+                "sex": [
+                    "categorical_to_int"
+                ],
+                "native-country": [
+                    "na_fill_median",
+                    "categorical_to_int"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation": {
+            "validation_type": "split",
+            "train_ratio": 0.75,
+            "shuffle": true,
+            "stratify": true,
+            "X_train_path": "AutoML_1/X_train.parquet",
+            "y_train_path": "AutoML_1/y_train.parquet",
+            "results_path": "AutoML_1"
+        },
+        "learner": {
+            "model_type": "Decision Tree",
+            "ml_task": "binary_classification",
+            "seed": 1235,
+            "criterion": "gini",
+            "max_depth": 3,
+            "explain_level": 2
+        },
+        "ml_task": "binary_classification",
+        "explain_level": 2,
+        "name": "2_DecisionTree"
+    },
+    "saved": [
+        "AutoML_1/2_DecisionTree/learner_1.decision_tree"
+    ],
+    "predictions_fname": "AutoML_1/2_DecisionTree/predictions_validation.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.3655910192804364,
+    "train_time": 10.277209758758545,
+    "is_stacked": false,
+    "threshold": 0.2974755086661643
+}

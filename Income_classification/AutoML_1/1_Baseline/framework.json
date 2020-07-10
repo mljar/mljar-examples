@@ -1,0 +1,69 @@
+{
+    "uid": "42e3be2d-8ae5-43ff-acc7-9445cb367f42",
+    "name": "1_Baseline",
+    "preprocessing": [
+        {
+            "categorical_y": {
+                "<=50K": 0,
+                ">50K": 1
+            },
+            "ml_task": "binary_classification"
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Baseline Classifier",
+            "algorithm_short_name": "Baseline",
+            "uid": "678e21cb-3322-4981-9810-d31f848f41be",
+            "params": {
+                "model_type": "Baseline",
+                "ml_task": "binary_classification",
+                "seed": 1235,
+                "explain_level": 2
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {},
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation": {
+            "validation_type": "split",
+            "train_ratio": 0.75,
+            "shuffle": true,
+            "stratify": true,
+            "X_train_path": "AutoML_1/X_train.parquet",
+            "y_train_path": "AutoML_1/y_train.parquet",
+            "results_path": "AutoML_1"
+        },
+        "learner": {
+            "model_type": "Baseline",
+            "ml_task": "binary_classification",
+            "seed": 1235,
+            "explain_level": 2
+        },
+        "ml_task": "binary_classification",
+        "explain_level": 2,
+        "name": "1_Baseline"
+    },
+    "saved": [
+        "AutoML_1/1_Baseline/learner_1.baseline"
+    ],
+    "predictions_fname": "AutoML_1/1_Baseline/predictions_validation.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.5519845471086654,
+    "train_time": 0.08375215530395508,
+    "is_stacked": false,
+    "threshold": 0.21661547911547913
+}
