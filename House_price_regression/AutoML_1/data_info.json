@@ -16,5 +16,47 @@
     ],
     "rows": 404,
     "cols": 13,
-    "target_is_numeric": true
+    "target_is_numeric": true,
+    "columns_info": {
+        "CRIM": [
+            "scale"
+        ],
+        "ZN": [
+            "scale"
+        ],
+        "INDUS": [
+            "scale"
+        ],
+        "CHAS": [],
+        "NOX": [
+            "scale"
+        ],
+        "RM": [
+            "scale"
+        ],
+        "AGE": [
+            "scale"
+        ],
+        "DIS": [
+            "scale"
+        ],
+        "RAD": [
+            "scale"
+        ],
+        "TAX": [
+            "scale"
+        ],
+        "PTRATIO": [
+            "scale"
+        ],
+        "B": [
+            "scale"
+        ],
+        "LSTAT": [
+            "scale"
+        ]
+    },
+    "target_info": [
+        "scale_log"
+    ]
 }

@@ -1,0 +1,92 @@
+{
+    "uid": "a37e1738-72d8-408c-89d4-9db60fa86e0c",
+    "name": "4_Default_RandomForest",
+    "preprocessing": [
+        {
+            "scale_y": {
+                "scale": [
+                    0.609731277496093
+                ],
+                "mean": [
+                    2.7004948457300113
+                ],
+                "var": [
+                    0.37177223075701754
+                ],
+                "n_samples_seen": 303,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    6.3
+                ]
+            },
+            "ml_task": "regression"
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Random Forest",
+            "algorithm_short_name": "Random Forest",
+            "uid": "6d94749a-08c4-4c00-a460-c240fe487f0d",
+            "params": {
+                "model_type": "Random Forest",
+                "ml_task": "regression",
+                "criterion": "mse",
+                "max_features": 0.6,
+                "min_samples_split": 30,
+                "seed": 4,
+                "explain_level": 2
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "trees_in_step": 100,
+            "train_cant_improve_limit": 1,
+            "min_steps": 1,
+            "max_steps": 50,
+            "early_stopping_rounds": 50,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {},
+            "target_preprocessing": [
+                "na_exclude",
+                "scale_log_and_normal"
+            ],
+            "ml_task": "regression"
+        },
+        "validation": {
+            "validation_type": "split",
+            "train_ratio": 0.75,
+            "shuffle": true,
+            "X_train_path": "AutoML_1/X_train.parquet",
+            "y_train_path": "AutoML_1/y_train.parquet",
+            "results_path": "AutoML_1"
+        },
+        "learner": {
+            "model_type": "Random Forest",
+            "ml_task": "regression",
+            "criterion": "mse",
+            "max_features": 0.6,
+            "min_samples_split": 30,
+            "seed": 4,
+            "explain_level": 2
+        },
+        "ml_task": "regression",
+        "explain_level": 2,
+        "name": "4_Default_RandomForest"
+    },
+    "saved": [
+        "AutoML_1/4_Default_RandomForest/learner_1.random_forest"
+    ],
+    "predictions_fname": "AutoML_1/4_Default_RandomForest/predictions_validation.csv",
+    "metric_name": "rmse",
+    "final_loss": 4.2522868152728295,
+    "train_time": 3.884516477584839,
+    "is_stacked": false
+}

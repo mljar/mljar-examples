@@ -7,5 +7,21 @@
     ],
     "rows": 135,
     "cols": 4,
-    "target_is_numeric": false
+    "target_is_numeric": false,
+    "columns_info": {
+        "sepal length (cm)": [
+            "scale"
+        ],
+        "sepal width (cm)": [
+            "scale"
+        ],
+        "petal length (cm)": [
+            "scale"
+        ],
+        "petal width (cm)": [
+            "scale"
+        ]
+    },
+    "target_info": [],
+    "num_class": 3
 }

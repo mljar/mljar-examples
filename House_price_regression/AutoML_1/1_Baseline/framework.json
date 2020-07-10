@@ -1,0 +1,62 @@
+{
+    "uid": "6865c219-d74f-450c-886d-ad4c980b4f94",
+    "name": "1_Baseline",
+    "preprocessing": [
+        {
+            "ml_task": "regression"
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.22.2",
+            "algorithm_name": "Baseline Regressor",
+            "algorithm_short_name": "Baseline",
+            "uid": "7685275e-f34a-4aee-b958-e690182266fc",
+            "params": {
+                "model_type": "Baseline",
+                "ml_task": "regression",
+                "seed": 1235,
+                "explain_level": 2
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {},
+            "target_preprocessing": [
+                "na_exclude"
+            ],
+            "ml_task": "regression"
+        },
+        "validation": {
+            "validation_type": "split",
+            "train_ratio": 0.75,
+            "shuffle": true,
+            "X_train_path": "AutoML_1/X_train.parquet",
+            "y_train_path": "AutoML_1/y_train.parquet",
+            "results_path": "AutoML_1"
+        },
+        "learner": {
+            "model_type": "Baseline",
+            "ml_task": "regression",
+            "seed": 1235,
+            "explain_level": 2
+        },
+        "ml_task": "regression",
+        "explain_level": 2,
+        "name": "1_Baseline"
+    },
+    "saved": [
+        "AutoML_1/1_Baseline/learner_1.baseline"
+    ],
+    "predictions_fname": "AutoML_1/1_Baseline/predictions_validation.csv",
+    "metric_name": "rmse",
+    "final_loss": 9.6582716646348,
+    "train_time": 0.025836944580078125,
+    "is_stacked": false
+}

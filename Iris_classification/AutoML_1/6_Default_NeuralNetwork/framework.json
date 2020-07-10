@@ -1,0 +1,141 @@
+{
+    "uid": "f4e364ed-53e2-4109-b7d9-cf9ee17597b7",
+    "name": "6_Default_NeuralNetwork",
+    "preprocessing": [
+        {
+            "scale": [
+                {
+                    "scale": [
+                        0.8182903267885993,
+                        0.406876486958442,
+                        1.7550152203567784,
+                        0.7631447842765186
+                    ],
+                    "mean": [
+                        5.855445544554454,
+                        3.0801980198019803,
+                        3.817821782178218,
+                        1.2168316831683168
+                    ],
+                    "var": [
+                        0.6695990589157926,
+                        0.1655484756396432,
+                        3.0800784236839513,
+                        0.582389961768454
+                    ],
+                    "n_samples_seen": 101,
+                    "columns": [
+                        "sepal length (cm)",
+                        "sepal width (cm)",
+                        "petal length (cm)",
+                        "petal width (cm)"
+                    ],
+                    "scale_method": "scale_normal"
+                }
+            ],
+            "categorical_y": {
+                "new_columns": [
+                    "target_setosa",
+                    "target_versicolor",
+                    "target_virginica"
+                ],
+                "unique_values": [
+                    "setosa",
+                    "versicolor",
+                    "virginica"
+                ],
+                "old_column": "target"
+            },
+            "ml_task": "multiclass_classification"
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "2.3.1",
+            "algorithm_name": "Neural Network",
+            "algorithm_short_name": "Neural Network",
+            "uid": "de1ea5c4-8703-4e63-a1de-2ceba11b091b",
+            "params": {
+                "model_type": "Neural Network",
+                "ml_task": "multiclass_classification",
+                "dense_layers": 2,
+                "dense_1_size": 32,
+                "dense_2_size": 16,
+                "dropout": 0,
+                "learning_rate": 0.05,
+                "momentum": 0.9,
+                "decay": 0.001,
+                "seed": 6,
+                "num_class": 3,
+                "explain_level": 2,
+                "model_architecture_json": "\"{\\\"class_name\\\": \\\"Sequential\\\", \\\"config\\\": {\\\"name\\\": \\\"sequential_1\\\", \\\"layers\\\": [{\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_1\\\", \\\"trainable\\\": true, \\\"batch_input_shape\\\": [null, 4], \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 32, \\\"activation\\\": \\\"relu\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}, {\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_2\\\", \\\"trainable\\\": true, \\\"batch_input_shape\\\": [null, 4], \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 16, \\\"activation\\\": \\\"relu\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}, {\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_3\\\", \\\"trainable\\\": true, \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 3, \\\"activation\\\": \\\"softmax\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}]}, \\\"keras_version\\\": \\\"2.3.1\\\", \\\"backend\\\": \\\"tensorflow\\\"}\""
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "one_step": 10,
+            "train_cant_improve_limit": 5,
+            "max_steps": 500,
+            "min_steps": 5,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "sepal length (cm)": [
+                    "scale_normal"
+                ],
+                "sepal width (cm)": [
+                    "scale_normal"
+                ],
+                "petal length (cm)": [
+                    "scale_normal"
+                ],
+                "petal width (cm)": [
+                    "scale_normal"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_onehot"
+            ],
+            "ml_task": "multiclass_classification"
+        },
+        "validation": {
+            "validation_type": "split",
+            "train_ratio": 0.75,
+            "shuffle": true,
+            "stratify": true,
+            "X_train_path": "AutoML_1/X_train.parquet",
+            "y_train_path": "AutoML_1/y_train.parquet",
+            "results_path": "AutoML_1"
+        },
+        "learner": {
+            "model_type": "Neural Network",
+            "ml_task": "multiclass_classification",
+            "dense_layers": 2,
+            "dense_1_size": 32,
+            "dense_2_size": 16,
+            "dropout": 0,
+            "learning_rate": 0.05,
+            "momentum": 0.9,
+            "decay": 0.001,
+            "seed": 6,
+            "num_class": 3,
+            "explain_level": 2,
+            "model_architecture_json": "\"{\\\"class_name\\\": \\\"Sequential\\\", \\\"config\\\": {\\\"name\\\": \\\"sequential_1\\\", \\\"layers\\\": [{\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_1\\\", \\\"trainable\\\": true, \\\"batch_input_shape\\\": [null, 4], \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 32, \\\"activation\\\": \\\"relu\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}, {\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_2\\\", \\\"trainable\\\": true, \\\"batch_input_shape\\\": [null, 4], \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 16, \\\"activation\\\": \\\"relu\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}, {\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_3\\\", \\\"trainable\\\": true, \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 3, \\\"activation\\\": \\\"softmax\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}]}, \\\"keras_version\\\": \\\"2.3.1\\\", \\\"backend\\\": \\\"tensorflow\\\"}\""
+        },
+        "ml_task": "multiclass_classification",
+        "explain_level": 2,
+        "name": "6_Default_NeuralNetwork"
+    },
+    "saved": [
+        "AutoML_1/6_Default_NeuralNetwork/learner_1.neural_network"
+    ],
+    "predictions_fname": "AutoML_1/6_Default_NeuralNetwork/predictions_validation.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.016534604515554212,
+    "train_time": 2.2241480350494385,
+    "is_stacked": false
+}

@@ -1,0 +1,200 @@
+{
+    "uid": "718e204a-d636-4554-bc9c-54dda95cf4b0",
+    "name": "6_Default_NeuralNetwork",
+    "preprocessing": [
+        {
+            "scale": [
+                {
+                    "scale": [
+                        9.03551284708308,
+                        23.518626180736582,
+                        6.985604643149464,
+                        0.11463231539678838,
+                        0.7079567285915886,
+                        27.840560677371382,
+                        2.103227389417933,
+                        8.725299916359178,
+                        169.0614902738079,
+                        2.263980409235603,
+                        94.85048203619215,
+                        7.20894662772899
+                    ],
+                    "mean": [
+                        3.7065360726072605,
+                        12.021452145214521,
+                        11.023729372937295,
+                        0.5556851485148515,
+                        6.328547854785478,
+                        69.15214521452145,
+                        3.7856907590759077,
+                        9.518151815181518,
+                        407.14521452145215,
+                        18.379207920792076,
+                        354.5291419141915,
+                        12.553597359735974
+                    ],
+                    "var": [
+                        81.64049240980339,
+                        553.1257774292282,
+                        48.798672230391354,
+                        0.013140567733228766,
+                        0.5012027295581043,
+                        775.0968188303978,
+                        4.423565451597773,
+                        76.13085863041749,
+                        28581.787493600845,
+                        5.125607293402608,
+                        8996.61394249801,
+                        51.968911481445176
+                    ],
+                    "n_samples_seen": 303,
+                    "columns": [
+                        "CRIM",
+                        "ZN",
+                        "INDUS",
+                        "NOX",
+                        "RM",
+                        "AGE",
+                        "DIS",
+                        "RAD",
+                        "TAX",
+                        "PTRATIO",
+                        "B",
+                        "LSTAT"
+                    ],
+                    "scale_method": "scale_normal"
+                }
+            ],
+            "scale_y": {
+                "scale": [
+                    0.609731277496093
+                ],
+                "mean": [
+                    2.7004948457300113
+                ],
+                "var": [
+                    0.37177223075701754
+                ],
+                "n_samples_seen": 303,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    6.3
+                ]
+            },
+            "ml_task": "regression"
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "2.3.1",
+            "algorithm_name": "Neural Network",
+            "algorithm_short_name": "Neural Network",
+            "uid": "2adc6fae-b336-459d-a38d-7c85a0e121ba",
+            "params": {
+                "model_type": "Neural Network",
+                "ml_task": "regression",
+                "dense_layers": 2,
+                "dense_1_size": 32,
+                "dense_2_size": 16,
+                "dropout": 0,
+                "learning_rate": 0.05,
+                "momentum": 0.9,
+                "decay": 0.001,
+                "seed": 6,
+                "explain_level": 2,
+                "model_architecture_json": "\"{\\\"class_name\\\": \\\"Sequential\\\", \\\"config\\\": {\\\"name\\\": \\\"sequential_1\\\", \\\"layers\\\": [{\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_1\\\", \\\"trainable\\\": true, \\\"batch_input_shape\\\": [null, 13], \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 32, \\\"activation\\\": \\\"relu\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}, {\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_2\\\", \\\"trainable\\\": true, \\\"batch_input_shape\\\": [null, 13], \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 16, \\\"activation\\\": \\\"relu\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}, {\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_3\\\", \\\"trainable\\\": true, \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 1, \\\"activation\\\": \\\"linear\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}]}, \\\"keras_version\\\": \\\"2.3.1\\\", \\\"backend\\\": \\\"tensorflow\\\"}\""
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "one_step": 10,
+            "train_cant_improve_limit": 5,
+            "max_steps": 500,
+            "min_steps": 5,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "CRIM": [
+                    "scale_normal"
+                ],
+                "ZN": [
+                    "scale_normal"
+                ],
+                "INDUS": [
+                    "scale_normal"
+                ],
+                "NOX": [
+                    "scale_normal"
+                ],
+                "RM": [
+                    "scale_normal"
+                ],
+                "AGE": [
+                    "scale_normal"
+                ],
+                "DIS": [
+                    "scale_normal"
+                ],
+                "RAD": [
+                    "scale_normal"
+                ],
+                "TAX": [
+                    "scale_normal"
+                ],
+                "PTRATIO": [
+                    "scale_normal"
+                ],
+                "B": [
+                    "scale_normal"
+                ],
+                "LSTAT": [
+                    "scale_normal"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude",
+                "scale_log_and_normal"
+            ],
+            "ml_task": "regression"
+        },
+        "validation": {
+            "validation_type": "split",
+            "train_ratio": 0.75,
+            "shuffle": true,
+            "X_train_path": "AutoML_1/X_train.parquet",
+            "y_train_path": "AutoML_1/y_train.parquet",
+            "results_path": "AutoML_1"
+        },
+        "learner": {
+            "model_type": "Neural Network",
+            "ml_task": "regression",
+            "dense_layers": 2,
+            "dense_1_size": 32,
+            "dense_2_size": 16,
+            "dropout": 0,
+            "learning_rate": 0.05,
+            "momentum": 0.9,
+            "decay": 0.001,
+            "seed": 6,
+            "explain_level": 2,
+            "model_architecture_json": "\"{\\\"class_name\\\": \\\"Sequential\\\", \\\"config\\\": {\\\"name\\\": \\\"sequential_1\\\", \\\"layers\\\": [{\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_1\\\", \\\"trainable\\\": true, \\\"batch_input_shape\\\": [null, 13], \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 32, \\\"activation\\\": \\\"relu\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}, {\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_2\\\", \\\"trainable\\\": true, \\\"batch_input_shape\\\": [null, 13], \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 16, \\\"activation\\\": \\\"relu\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}, {\\\"class_name\\\": \\\"Dense\\\", \\\"config\\\": {\\\"name\\\": \\\"dense_3\\\", \\\"trainable\\\": true, \\\"dtype\\\": \\\"float32\\\", \\\"units\\\": 1, \\\"activation\\\": \\\"linear\\\", \\\"use_bias\\\": true, \\\"kernel_initializer\\\": {\\\"class_name\\\": \\\"VarianceScaling\\\", \\\"config\\\": {\\\"scale\\\": 1.0, \\\"mode\\\": \\\"fan_avg\\\", \\\"distribution\\\": \\\"uniform\\\", \\\"seed\\\": null}}, \\\"bias_initializer\\\": {\\\"class_name\\\": \\\"Zeros\\\", \\\"config\\\": {}}, \\\"kernel_regularizer\\\": null, \\\"bias_regularizer\\\": null, \\\"activity_regularizer\\\": null, \\\"kernel_constraint\\\": null, \\\"bias_constraint\\\": null}}]}, \\\"keras_version\\\": \\\"2.3.1\\\", \\\"backend\\\": \\\"tensorflow\\\"}\""
+        },
+        "ml_task": "regression",
+        "explain_level": 2,
+        "name": "6_Default_NeuralNetwork"
+    },
+    "saved": [
+        "AutoML_1/6_Default_NeuralNetwork/learner_1.neural_network"
+    ],
+    "predictions_fname": "AutoML_1/6_Default_NeuralNetwork/predictions_validation.csv",
+    "metric_name": "rmse",
+    "final_loss": 3.022718630730072,
+    "train_time": 2.9946343898773193,
+    "is_stacked": false
+}
