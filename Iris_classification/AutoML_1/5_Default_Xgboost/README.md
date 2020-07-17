@@ -22,23 +22,23 @@ logloss
 
 ## Training time
 
-4.9 seconds
+17.0 seconds
 
 ### Metric details
-|           |    setosa |   versicolor |   virginica |   accuracy |   macro avg |   weighted avg |   logloss |
-|:----------|----------:|-------------:|------------:|-----------:|------------:|---------------:|----------:|
-| precision |  0.916667 |     0.909091 |    1        |   0.941176 |    0.941919 |       0.943627 |  0.207343 |
-| recall    |  1        |     0.909091 |    0.916667 |   0.941176 |    0.941919 |       0.941176 |  0.207343 |
-| f1-score  |  0.956522 |     0.909091 |    0.956522 |   0.941176 |    0.940711 |       0.941176 |  0.207343 |
-| support   | 11        |    11        |   12        |   0.941176 |   34        |      34        |  0.207343 |
+|           |   setosa |   versicolor |   virginica |   accuracy |   macro avg |   weighted avg |   logloss |
+|:----------|---------:|-------------:|------------:|-----------:|------------:|---------------:|----------:|
+| precision | 0.9      |     0.888889 |    1        |   0.925926 |    0.92963  |       0.92963  |  0.212116 |
+| recall    | 1        |     0.888889 |    0.888889 |   0.925926 |    0.925926 |       0.925926 |  0.212116 |
+| f1-score  | 0.947368 |     0.888889 |    0.941176 |   0.925926 |    0.925811 |       0.925811 |  0.212116 |
+| support   | 9        |     9        |    9        |   0.925926 |   27        |      27        |  0.212116 |
 
 
 ## Confusion matrix
 |                       |   Predicted as setosa |   Predicted as versicolor |   Predicted as virginica |
 |:----------------------|----------------------:|--------------------------:|-------------------------:|
-| Labeled as setosa     |                    11 |                         0 |                        0 |
-| Labeled as versicolor |                     1 |                        10 |                        0 |
-| Labeled as virginica  |                     0 |                         1 |                       11 |
+| Labeled as setosa     |                     9 |                         0 |                        0 |
+| Labeled as versicolor |                     1 |                         8 |                        0 |
+| Labeled as virginica  |                     0 |                         1 |                        8 |
 
 ## Learning curves
 ![Learning curves](learning_curves.png)

@@ -18,23 +18,23 @@ logloss
 
 ## Training time
 
-7.7 seconds
+25.7 seconds
 
 ### Metric details
 |           |   setosa |   versicolor |   virginica |   accuracy |   macro avg |   weighted avg |   logloss |
 |:----------|---------:|-------------:|------------:|-----------:|------------:|---------------:|----------:|
-| precision |        1 |     0.916667 |    1        |   0.970588 |    0.972222 |       0.973039 |   0.12038 |
-| recall    |        1 |     1        |    0.916667 |   0.970588 |    0.972222 |       0.970588 |   0.12038 |
-| f1-score  |        1 |     0.956522 |    0.956522 |   0.970588 |    0.971014 |       0.970588 |   0.12038 |
-| support   |       11 |    11        |   12        |   0.970588 |   34        |      34        |   0.12038 |
+| precision |        1 |     1        |    0.9      |   0.962963 |    0.966667 |       0.966667 |  0.138415 |
+| recall    |        1 |     0.888889 |    1        |   0.962963 |    0.962963 |       0.962963 |  0.138415 |
+| f1-score  |        1 |     0.941176 |    0.947368 |   0.962963 |    0.962848 |       0.962848 |  0.138415 |
+| support   |        9 |     9        |    9        |   0.962963 |   27        |      27        |  0.138415 |
 
 
 ## Confusion matrix
 |                       |   Predicted as setosa |   Predicted as versicolor |   Predicted as virginica |
 |:----------------------|----------------------:|--------------------------:|-------------------------:|
-| Labeled as setosa     |                    11 |                         0 |                        0 |
-| Labeled as versicolor |                     0 |                        11 |                        0 |
-| Labeled as virginica  |                     0 |                         1 |                       11 |
+| Labeled as setosa     |                     9 |                         0 |                        0 |
+| Labeled as versicolor |                     0 |                         8 |                        1 |
+| Labeled as virginica  |                     0 |                         0 |                        9 |
 
 ## Learning curves
 ![Learning curves](learning_curves.png)

@@ -1,5 +1,5 @@
 {
-    "uid": "5a49dbc9-de0a-499f-abde-d11cfe1dce2b",
+    "uid": "6a5b7086-9592-4c5a-8c98-735b60119085",
     "name": "4_Default_RandomForest",
     "preprocessing": [
         {
@@ -13,10 +13,10 @@
     ],
     "learners": [
         {
-            "library_version": "0.22.2",
+            "library_version": "0.22",
             "algorithm_name": "Random Forest",
             "algorithm_short_name": "Random Forest",
-            "uid": "7ad74581-1219-4000-81c9-9b416d67d20e",
+            "uid": "66a0e9fb-367a-491d-b78a-ced7ca7d7e21",
             "params": {
                 "model_type": "Random Forest",
                 "ml_task": "multiclass_classification",
@@ -75,7 +75,7 @@
     ],
     "predictions_fname": "AutoML_1/4_Default_RandomForest/predictions_validation.csv",
     "metric_name": "logloss",
-    "final_loss": 0.12038031908944342,
-    "train_time": 7.658403635025024,
+    "final_loss": 0.13841451662668633,
+    "train_time": 25.669381380081177,
     "is_stacked": false
 }

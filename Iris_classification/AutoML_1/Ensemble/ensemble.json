@@ -5,12 +5,12 @@
     "selected_models": [
         {
             "model": "6_Default_NeuralNetwork",
-            "repeat": 5.0
+            "repeat": 1.0
         }
     ],
     "predictions_fname": "AutoML_1/Ensemble/predictions_ensemble.csv",
     "metric_name": "logloss",
-    "final_loss": 0.01653460272993524,
-    "train_time": 0.11497807502746582,
+    "final_loss": 0.006362229541208662,
+    "train_time": 0.5373694896697998,
     "is_stacked": false
 }
