@@ -1,29 +1,29 @@
 {
-    "uid": "f4e364ed-53e2-4109-b7d9-cf9ee17597b7",
+    "uid": "eb0ea34d-e1bd-4537-b952-826b1c10906b",
     "name": "6_Default_NeuralNetwork",
     "preprocessing": [
         {
             "scale": [
                 {
                     "scale": [
-                        0.8182903267885993,
-                        0.406876486958442,
-                        1.7550152203567784,
-                        0.7631447842765186
+                        0.7977089564648217,
+                        0.4307635072879844,
+                        1.7485999847421845,
+                        0.7775321298941616
                     ],
                     "mean": [
-                        5.855445544554454,
-                        3.0801980198019803,
-                        3.817821782178218,
-                        1.2168316831683168
+                        5.847435897435898,
+                        3.0269230769230773,
+                        3.7551282051282056,
+                        1.2076923076923076
                     ],
                     "var": [
-                        0.6695990589157926,
-                        0.1655484756396432,
-                        3.0800784236839513,
-                        0.582389961768454
+                        0.6363395792241947,
+                        0.18555719921104538,
+                        3.057601906640368,
+                        0.6045562130177515
                     ],
-                    "n_samples_seen": 101,
+                    "n_samples_seen": 78,
                     "columns": [
                         "sepal length (cm)",
                         "sepal width (cm)",
@@ -54,7 +54,7 @@
             "library_version": "2.3.1",
             "algorithm_name": "Neural Network",
             "algorithm_short_name": "Neural Network",
-            "uid": "de1ea5c4-8703-4e63-a1de-2ceba11b091b",
+            "uid": "29dd0b8c-6b2c-4a52-b78e-68be8abff14d",
             "params": {
                 "model_type": "Neural Network",
                 "ml_task": "multiclass_classification",
@@ -135,7 +135,7 @@
     ],
     "predictions_fname": "AutoML_1/6_Default_NeuralNetwork/predictions_validation.csv",
     "metric_name": "logloss",
-    "final_loss": 0.016534604515554212,
-    "train_time": 2.2241480350494385,
+    "final_loss": 0.006362229541208662,
+    "train_time": 10.708096265792847,
     "is_stacked": false
 }

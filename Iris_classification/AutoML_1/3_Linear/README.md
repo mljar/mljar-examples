@@ -15,23 +15,23 @@ logloss
 
 ## Training time
 
-7.0 seconds
+27.1 seconds
 
 ### Metric details
 |           |   setosa |   versicolor |   virginica |   accuracy |   macro avg |   weighted avg |   logloss |
 |:----------|---------:|-------------:|------------:|-----------:|------------:|---------------:|----------:|
-| precision |        1 |            1 |           1 |          1 |           1 |              1 |  0.123994 |
-| recall    |        1 |            1 |           1 |          1 |           1 |              1 |  0.123994 |
-| f1-score  |        1 |            1 |           1 |          1 |           1 |              1 |  0.123994 |
-| support   |       11 |           11 |          12 |          1 |          34 |             34 |  0.123994 |
+| precision |        1 |            1 |           1 |          1 |           1 |              1 |   0.12529 |
+| recall    |        1 |            1 |           1 |          1 |           1 |              1 |   0.12529 |
+| f1-score  |        1 |            1 |           1 |          1 |           1 |              1 |   0.12529 |
+| support   |        9 |            9 |           9 |          1 |          27 |             27 |   0.12529 |
 
 
 ## Confusion matrix
 |                       |   Predicted as setosa |   Predicted as versicolor |   Predicted as virginica |
 |:----------------------|----------------------:|--------------------------:|-------------------------:|
-| Labeled as setosa     |                    11 |                         0 |                        0 |
-| Labeled as versicolor |                     0 |                        11 |                        0 |
-| Labeled as virginica  |                     0 |                         0 |                       12 |
+| Labeled as setosa     |                     9 |                         0 |                        0 |
+| Labeled as versicolor |                     0 |                         9 |                        0 |
+| Labeled as virginica  |                     0 |                         0 |                        9 |
 
 ## Learning curves
 ![Learning curves](learning_curves.png)
@@ -41,11 +41,11 @@ logloss
 ### Coefficients learner #1
 |                   |    setosa |   versicolor |   virginica |
 |:------------------|----------:|-------------:|------------:|
-| intercept         | -0.227322 |     1.78372  |   -1.5564   |
-| sepal length (cm) | -1.03947  |     0.551319 |    0.48815  |
-| sepal width (cm)  |  1.06056  |    -0.321485 |   -0.739071 |
-| petal length (cm) | -1.65079  |    -0.337193 |    1.98798  |
-| petal width (cm)  | -1.52061  |    -0.752418 |    2.27302  |
+| intercept         | -0.340419 |   1.61125    |   -1.27083  |
+| sepal length (cm) | -1.03992  |   0.500877   |    0.539043 |
+| sepal width (cm)  |  0.840776 |  -0.382739   |   -0.458037 |
+| petal length (cm) | -1.55192  |   0.00792678 |    1.544    |
+| petal width (cm)  | -1.37221  |  -0.835489   |    2.2077   |
 
 
 ## Permutation-based Importance

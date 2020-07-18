@@ -5,7 +5,7 @@
         "petal length (cm)",
         "petal width (cm)"
     ],
-    "rows": 135,
+    "rows": 105,
     "cols": 4,
     "target_is_numeric": false,
     "columns_info": {

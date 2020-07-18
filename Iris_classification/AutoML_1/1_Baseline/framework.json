@@ -1,5 +1,5 @@
 {
-    "uid": "d105c81d-3659-4789-845b-1ccd8a303255",
+    "uid": "284b7350-8e73-4b9d-ad16-bdfd7b7a229b",
     "name": "1_Baseline",
     "preprocessing": [
         {
@@ -13,10 +13,10 @@
     ],
     "learners": [
         {
-            "library_version": "0.22.2",
+            "library_version": "0.22",
             "algorithm_name": "Baseline Classifier",
             "algorithm_short_name": "Baseline",
-            "uid": "eda9139b-5ded-4c06-bec7-9972bf12077f",
+            "uid": "80b5c826-b52a-497b-b21b-ff34a61f5a4b",
             "params": {
                 "model_type": "Baseline",
                 "ml_task": "multiclass_classification",
@@ -65,7 +65,7 @@
     ],
     "predictions_fname": "AutoML_1/1_Baseline/predictions_validation.csv",
     "metric_name": "logloss",
-    "final_loss": 1.0978457200725678,
-    "train_time": 0.024419784545898438,
+    "final_loss": 1.0986122886681098,
+    "train_time": 0.11878561973571777,
     "is_stacked": false
 }
