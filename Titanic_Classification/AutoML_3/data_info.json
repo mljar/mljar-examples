@@ -1,0 +1,56 @@
+{
+    "columns": [
+        "Pclass",
+        "Name",
+        "Sex",
+        "Age",
+        "SibSp",
+        "Parch",
+        "Ticket",
+        "Fare",
+        "Cabin",
+        "Embarked"
+    ],
+    "rows": 891,
+    "cols": 10,
+    "target_is_numeric": true,
+    "columns_info": {
+        "Pclass": [
+            "scale"
+        ],
+        "Name": [
+            "text_transform"
+        ],
+        "Sex": [
+            "categorical",
+            "categorical_to_int"
+        ],
+        "Age": [
+            "missing_values",
+            "scale"
+        ],
+        "SibSp": [
+            "scale"
+        ],
+        "Parch": [],
+        "Ticket": [
+            "text_transform"
+        ],
+        "Fare": [
+            "scale"
+        ],
+        "Cabin": [
+            "missing_values",
+            "categorical",
+            "categorical_to_int"
+        ],
+        "Embarked": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ]
+    },
+    "target_info": [],
+    "n_features": 10,
+    "n_classes": 2
+}

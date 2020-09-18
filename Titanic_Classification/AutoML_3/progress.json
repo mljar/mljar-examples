@@ -1,0 +1,457 @@
+{
+    "fit_level": "finished",
+    "time_controller": {
+        "total_time_limit": 3600,
+        "model_time_limit": null,
+        "steps": [
+            "simple_algorithms",
+            "default_algorithms",
+            "ensemble"
+        ],
+        "algorithms": [
+            "Baseline",
+            "Linear",
+            "Decision Tree",
+            "Random Forest",
+            "Xgboost",
+            "Neural Network"
+        ],
+        "spend": [
+            {
+                "model_name": "prepare_data",
+                "model_type": "prepare_data",
+                "fit_level": "prepare_data",
+                "train_time": 3.932011604309082
+            },
+            {
+                "model_name": "1_Baseline",
+                "model_type": "Baseline",
+                "fit_level": "simple_algorithms",
+                "train_time": 0.262437105178833
+            },
+            {
+                "model_name": "2_DecisionTree",
+                "model_type": "Decision Tree",
+                "fit_level": "simple_algorithms",
+                "train_time": 18.00340986251831
+            },
+            {
+                "model_name": "3_Linear",
+                "model_type": "Linear",
+                "fit_level": "simple_algorithms",
+                "train_time": 12.201520442962646
+            },
+            {
+                "model_name": "4_Default_RandomForest",
+                "model_type": "Random Forest",
+                "fit_level": "default_algorithms",
+                "train_time": 22.242387294769287
+            },
+            {
+                "model_name": "5_Default_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "default_algorithms",
+                "train_time": 12.627838134765625
+            },
+            {
+                "model_name": "6_Default_NeuralNetwork",
+                "model_type": "Neural Network",
+                "fit_level": "default_algorithms",
+                "train_time": 23.841191291809082
+            },
+            {
+                "model_name": "Ensemble",
+                "model_type": "Ensemble",
+                "fit_level": "ensemble",
+                "train_time": 0.8290066719055176
+            }
+        ],
+        "is_hill_climbing": false,
+        "is_stacking": false
+    },
+    "all_params": {
+        "simple_algorithms": [
+            {
+                "additional": {
+                    "max_steps": 1,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {},
+                    "target_preprocessing": [
+                        "na_exclude"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "AutoML_3/X.parquet",
+                    "y_path": "AutoML_3/y.parquet",
+                    "results_path": "AutoML_3"
+                },
+                "learner": {
+                    "model_type": "Baseline",
+                    "ml_task": "binary_classification",
+                    "seed": 1235,
+                    "explain_level": 2
+                },
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "1_Baseline",
+                "status": "trained",
+                "final_loss": 0.6667749040921279,
+                "train_time": 0.262437105178833
+            },
+            {
+                "additional": {
+                    "trees_in_step": 1,
+                    "train_cant_improve_limit": 0,
+                    "max_steps": 1,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "Name": [
+                            "text_transform"
+                        ],
+                        "Sex": [
+                            "categorical_to_int"
+                        ],
+                        "Age": [
+                            "na_fill_median"
+                        ],
+                        "Ticket": [
+                            "text_transform"
+                        ],
+                        "Cabin": [
+                            "na_fill_median",
+                            "categorical_to_int"
+                        ],
+                        "Embarked": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "AutoML_3/X.parquet",
+                    "y_path": "AutoML_3/y.parquet",
+                    "results_path": "AutoML_3"
+                },
+                "learner": {
+                    "model_type": "Decision Tree",
+                    "ml_task": "binary_classification",
+                    "seed": 1235,
+                    "criterion": "gini",
+                    "max_depth": 3,
+                    "explain_level": 2
+                },
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "2_DecisionTree",
+                "status": "trained",
+                "final_loss": 0.6485042426940747,
+                "train_time": 18.00340986251831
+            },
+            {
+                "additional": {
+                    "max_steps": 1,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "Pclass": [
+                            "scale_normal"
+                        ],
+                        "Name": [
+                            "text_transform"
+                        ],
+                        "Sex": [
+                            "categorical_to_int",
+                            "scale_normal"
+                        ],
+                        "Age": [
+                            "na_fill_median",
+                            "scale_normal"
+                        ],
+                        "SibSp": [
+                            "scale_normal"
+                        ],
+                        "Ticket": [
+                            "text_transform"
+                        ],
+                        "Fare": [
+                            "scale_normal"
+                        ],
+                        "Cabin": [
+                            "na_fill_median",
+                            "categorical_to_int",
+                            "scale_normal"
+                        ],
+                        "Embarked": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "AutoML_3/X.parquet",
+                    "y_path": "AutoML_3/y.parquet",
+                    "results_path": "AutoML_3"
+                },
+                "learner": {
+                    "model_type": "Linear",
+                    "ml_task": "binary_classification",
+                    "seed": 1235,
+                    "explain_level": 2
+                },
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "3_Linear",
+                "status": "trained",
+                "final_loss": 0.5936492722761059,
+                "train_time": 12.201520442962646
+            }
+        ],
+        "default_algorithms": [
+            {
+                "additional": {
+                    "trees_in_step": 100,
+                    "train_cant_improve_limit": 1,
+                    "min_steps": 1,
+                    "max_steps": 50,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "Name": [
+                            "text_transform"
+                        ],
+                        "Sex": [
+                            "categorical_to_int"
+                        ],
+                        "Age": [
+                            "na_fill_median"
+                        ],
+                        "Ticket": [
+                            "text_transform"
+                        ],
+                        "Cabin": [
+                            "na_fill_median",
+                            "categorical_to_int"
+                        ],
+                        "Embarked": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "AutoML_3/X.parquet",
+                    "y_path": "AutoML_3/y.parquet",
+                    "results_path": "AutoML_3"
+                },
+                "learner": {
+                    "model_type": "Random Forest",
+                    "ml_task": "binary_classification",
+                    "criterion": "gini",
+                    "max_features": 0.6,
+                    "min_samples_split": 30,
+                    "max_depth": 6,
+                    "seed": 4,
+                    "explain_level": 2
+                },
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "4_Default_RandomForest",
+                "status": "trained",
+                "final_loss": 0.4486907606980526,
+                "train_time": 22.242387294769287
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "Name": [
+                            "text_transform"
+                        ],
+                        "Sex": [
+                            "categorical_to_int"
+                        ],
+                        "Age": [
+                            "na_fill_median"
+                        ],
+                        "Ticket": [
+                            "text_transform"
+                        ],
+                        "Cabin": [
+                            "na_fill_median",
+                            "categorical_to_int"
+                        ],
+                        "Embarked": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "AutoML_3/X.parquet",
+                    "y_path": "AutoML_3/y.parquet",
+                    "results_path": "AutoML_3"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "objective": "binary:logistic",
+                    "eval_metric": "logloss",
+                    "eta": 0.1,
+                    "max_depth": 6,
+                    "min_child_weight": 1,
+                    "subsample": 1.0,
+                    "colsample_bytree": 1.0,
+                    "seed": 5,
+                    "explain_level": 2
+                },
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "5_Default_Xgboost",
+                "status": "trained",
+                "final_loss": 0.45892169179536835,
+                "train_time": 12.627838134765625
+            },
+            {
+                "additional": {
+                    "one_step": 10,
+                    "train_cant_improve_limit": 5,
+                    "max_steps": 500,
+                    "min_steps": 5,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "Pclass": [
+                            "scale_normal"
+                        ],
+                        "Name": [
+                            "text_transform"
+                        ],
+                        "Sex": [
+                            "categorical_to_int",
+                            "scale_normal"
+                        ],
+                        "Age": [
+                            "na_fill_median",
+                            "scale_normal"
+                        ],
+                        "SibSp": [
+                            "scale_normal"
+                        ],
+                        "Ticket": [
+                            "text_transform"
+                        ],
+                        "Fare": [
+                            "scale_normal"
+                        ],
+                        "Cabin": [
+                            "na_fill_median",
+                            "categorical_to_int",
+                            "scale_normal"
+                        ],
+                        "Embarked": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "AutoML_3/X.parquet",
+                    "y_path": "AutoML_3/y.parquet",
+                    "results_path": "AutoML_3"
+                },
+                "learner": {
+                    "model_type": "Neural Network",
+                    "ml_task": "binary_classification",
+                    "dense_layers": 2,
+                    "dense_1_size": 32,
+                    "dense_2_size": 16,
+                    "dropout": 0,
+                    "learning_rate": 0.05,
+                    "momentum": 0.9,
+                    "decay": 0.001,
+                    "seed": 6,
+                    "explain_level": 2
+                },
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "6_Default_NeuralNetwork",
+                "status": "trained",
+                "final_loss": 0.7334105752852511,
+                "train_time": 23.841191291809082
+            }
+        ],
+        "ensemble": [
+            {
+                "model_type": "ensemble",
+                "is_stacked": false,
+                "name": "Ensemble",
+                "status": "trained",
+                "final_loss": 0.43631896270587667,
+                "train_time": 0.8290066719055176
+            }
+        ]
+    }
+}
