@@ -1,0 +1,48 @@
+{
+    "mode": "Explain",
+    "ml_task": "binary_classification",
+    "results_path": "AutoML_1k",
+    "total_time_limit": 3600,
+    "model_time_limit": null,
+    "algorithms": [
+        "Baseline",
+        "Linear",
+        "Decision Tree",
+        "Random Forest",
+        "Xgboost",
+        "Neural Network"
+    ],
+    "train_ensemble": true,
+    "stack_models": false,
+    "eval_metric": "logloss",
+    "validation_strategy": {
+        "validation_type": "split",
+        "train_ratio": 0.75,
+        "shuffle": true,
+        "stratify": true,
+        "X_path": "AutoML_1k/X.parquet",
+        "y_path": "AutoML_1k/y.parquet",
+        "results_path": "AutoML_1k"
+    },
+    "verbose": 1,
+    "explain_level": 2,
+    "golden_features": false,
+    "features_selection": true,
+    "start_random_models": 1,
+    "hill_climbing_steps": 0,
+    "top_models_to_improve": 0,
+    "random_state": 1234,
+    "saved": [
+        "AutoML_1k/1_Baseline",
+        "AutoML_1k/2_DecisionTree",
+        "AutoML_1k/3_Linear",
+        "AutoML_1k/4_Default_RandomForest",
+        "AutoML_1k/5_Default_Xgboost",
+        "AutoML_1k/6_Default_NeuralNetwork",
+        "AutoML_1k/5_Default_Xgboost_RandomFeature",
+        "AutoML_1k/6_Default_NeuralNetwork_SelectedFeatures",
+        "AutoML_1k/4_Default_RandomForest_SelectedFeatures",
+        "AutoML_1k/5_Default_Xgboost_RandomFeature_SelectedFeatures",
+        "AutoML_1k/Ensemble"
+    ]
+}

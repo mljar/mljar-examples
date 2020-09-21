@@ -1,0 +1,25 @@
+{
+    "name": "Ensemble",
+    "ml_task": "binary_classification",
+    "optimize_metric": "logloss",
+    "selected_models": [
+        {
+            "model": "4_Default_RandomForest",
+            "repeat": 3.0
+        },
+        {
+            "model": "4_Default_RandomForest_RandomFeature",
+            "repeat": 1.0
+        },
+        {
+            "model": "6_Default_NeuralNetwork",
+            "repeat": 3.0
+        }
+    ],
+    "predictions_fname": "AutoML_10k/Ensemble/predictions_ensemble.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.6919503955988652,
+    "train_time": 0.9431049823760986,
+    "is_stacked": false,
+    "threshold": 0.5073130544304115
+}

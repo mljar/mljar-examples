@@ -1,0 +1,151 @@
+{
+    "uid": "c22561c5-95b4-40a2-80d4-f96f8add00f1",
+    "name": "3_Linear",
+    "preprocessing": [
+        {
+            "scale": [
+                {
+                    "scale": [
+                        0.28777536535179227,
+                        0.2860114056582643,
+                        0.2851340601126508,
+                        0.28711775415386587,
+                        0.2924913823986062,
+                        0.28980042133386896
+                    ],
+                    "mean": [
+                        0.5067904860072795,
+                        0.5009411604334599,
+                        0.4985188259359917,
+                        0.5037593964794638,
+                        0.5101786540313101,
+                        0.502185864312306
+                    ],
+                    "var": [
+                        0.08281466090335753,
+                        0.0818025241666162,
+                        0.08130143223632474,
+                        0.08243660475035977,
+                        0.08555120877744771,
+                        0.08398428420528797
+                    ],
+                    "n_samples_seen": 3750,
+                    "n_features_in": 6,
+                    "columns": [
+                        "feature_1",
+                        "feature_3",
+                        "feature_7",
+                        "feature_8",
+                        "feature_9",
+                        "feature_10"
+                    ],
+                    "scale_method": "scale_normal"
+                }
+            ],
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "feature_1": [
+                        "scale_normal"
+                    ],
+                    "feature_3": [
+                        "scale_normal"
+                    ],
+                    "feature_7": [
+                        "scale_normal"
+                    ],
+                    "feature_8": [
+                        "scale_normal"
+                    ],
+                    "feature_9": [
+                        "scale_normal"
+                    ],
+                    "feature_10": [
+                        "scale_normal"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude"
+                ],
+                "ml_task": "binary_classification"
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.23.2",
+            "algorithm_name": "Logistic Regression",
+            "algorithm_short_name": "Linear",
+            "uid": "45b50439-6294-4956-b591-be15397941fe",
+            "params": {
+                "model_type": "Linear",
+                "ml_task": "binary_classification",
+                "seed": 1235,
+                "explain_level": 2
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "feature_1": [
+                    "scale_normal"
+                ],
+                "feature_3": [
+                    "scale_normal"
+                ],
+                "feature_7": [
+                    "scale_normal"
+                ],
+                "feature_8": [
+                    "scale_normal"
+                ],
+                "feature_9": [
+                    "scale_normal"
+                ],
+                "feature_10": [
+                    "scale_normal"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.75,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "AutoML_5k/X.parquet",
+            "y_path": "AutoML_5k/y.parquet",
+            "results_path": "AutoML_5k"
+        },
+        "learner": {
+            "model_type": "Linear",
+            "ml_task": "binary_classification",
+            "seed": 1235,
+            "explain_level": 2
+        },
+        "ml_task": "binary_classification",
+        "explain_level": 2,
+        "name": "3_Linear",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null
+    },
+    "saved": [
+        "AutoML_5k/3_Linear/learner_1.linear"
+    ],
+    "predictions_fname": "AutoML_5k/3_Linear/predictions_validation.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.6980153051278526,
+    "train_time": 3.1185836791992188,
+    "is_stacked": false,
+    "threshold": 0.4677221466258872
+}

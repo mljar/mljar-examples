@@ -1,0 +1,44 @@
+{
+    "columns": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5",
+        "feature_6",
+        "feature_7",
+        "feature_8",
+        "feature_9",
+        "feature_10"
+    ],
+    "rows": 5000,
+    "cols": 10,
+    "target_is_numeric": true,
+    "columns_info": {
+        "feature_1": [
+            "scale"
+        ],
+        "feature_2": [],
+        "feature_3": [
+            "scale"
+        ],
+        "feature_4": [],
+        "feature_5": [],
+        "feature_6": [],
+        "feature_7": [
+            "scale"
+        ],
+        "feature_8": [
+            "scale"
+        ],
+        "feature_9": [
+            "scale"
+        ],
+        "feature_10": [
+            "scale"
+        ]
+    },
+    "target_info": [],
+    "n_features": 10,
+    "n_classes": 2
+}

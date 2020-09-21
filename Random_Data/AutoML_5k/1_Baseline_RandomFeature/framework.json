@@ -1,0 +1,77 @@
+{
+    "uid": "7593ca63-714d-4098-9e5d-1fa218f78f2d",
+    "name": "1_Baseline_RandomFeature",
+    "preprocessing": [
+        {
+            "ml_task": "binary_classification",
+            "add_random_feature": true,
+            "params": {
+                "columns_preprocessing": {},
+                "target_preprocessing": [
+                    "na_exclude"
+                ],
+                "ml_task": "binary_classification",
+                "add_random_feature": true
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.23.2",
+            "algorithm_name": "Baseline Classifier",
+            "algorithm_short_name": "Baseline",
+            "uid": "069b654d-272a-4aa8-bf9a-9b6fcfa16f32",
+            "params": {
+                "model_type": "Baseline",
+                "ml_task": "binary_classification",
+                "seed": 1235,
+                "explain_level": 1
+            }
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {},
+            "target_preprocessing": [
+                "na_exclude"
+            ],
+            "ml_task": "binary_classification",
+            "add_random_feature": true
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.75,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "AutoML_5k/X.parquet",
+            "y_path": "AutoML_5k/y.parquet",
+            "results_path": "AutoML_5k"
+        },
+        "learner": {
+            "model_type": "Baseline",
+            "ml_task": "binary_classification",
+            "seed": 1235,
+            "explain_level": 1
+        },
+        "ml_task": "binary_classification",
+        "explain_level": 1,
+        "name": "1_Baseline_RandomFeature",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null
+    },
+    "saved": [
+        "AutoML_5k/1_Baseline_RandomFeature/learner_1.baseline"
+    ],
+    "predictions_fname": "AutoML_5k/1_Baseline_RandomFeature/predictions_validation.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.6931268426488483,
+    "train_time": 0.03741168975830078,
+    "is_stacked": false,
+    "threshold": 0.44688
+}

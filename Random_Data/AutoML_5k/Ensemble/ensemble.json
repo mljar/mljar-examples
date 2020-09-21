@@ -1,0 +1,17 @@
+{
+    "name": "Ensemble",
+    "ml_task": "binary_classification",
+    "optimize_metric": "logloss",
+    "selected_models": [
+        {
+            "model": "1_Baseline",
+            "repeat": 1.0
+        }
+    ],
+    "predictions_fname": "AutoML_5k/Ensemble/predictions_ensemble.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.6931268426488483,
+    "train_time": 0.22372937202453613,
+    "is_stacked": false,
+    "threshold": 0.44688
+}
