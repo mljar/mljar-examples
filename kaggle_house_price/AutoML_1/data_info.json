@@ -1,0 +1,389 @@
+{
+    "columns": [
+        "Id",
+        "MSSubClass",
+        "MSZoning",
+        "LotFrontage",
+        "LotArea",
+        "Street",
+        "Alley",
+        "LotShape",
+        "LandContour",
+        "Utilities",
+        "LotConfig",
+        "LandSlope",
+        "Neighborhood",
+        "Condition1",
+        "Condition2",
+        "BldgType",
+        "HouseStyle",
+        "OverallQual",
+        "OverallCond",
+        "YearBuilt",
+        "YearRemodAdd",
+        "RoofStyle",
+        "RoofMatl",
+        "Exterior1st",
+        "Exterior2nd",
+        "MasVnrType",
+        "MasVnrArea",
+        "ExterQual",
+        "ExterCond",
+        "Foundation",
+        "BsmtQual",
+        "BsmtCond",
+        "BsmtExposure",
+        "BsmtFinType1",
+        "BsmtFinSF1",
+        "BsmtFinType2",
+        "BsmtFinSF2",
+        "BsmtUnfSF",
+        "TotalBsmtSF",
+        "Heating",
+        "HeatingQC",
+        "CentralAir",
+        "Electrical",
+        "1stFlrSF",
+        "2ndFlrSF",
+        "LowQualFinSF",
+        "GrLivArea",
+        "BsmtFullBath",
+        "BsmtHalfBath",
+        "FullBath",
+        "HalfBath",
+        "BedroomAbvGr",
+        "KitchenAbvGr",
+        "KitchenQual",
+        "TotRmsAbvGrd",
+        "Functional",
+        "Fireplaces",
+        "FireplaceQu",
+        "GarageType",
+        "GarageYrBlt",
+        "GarageFinish",
+        "GarageCars",
+        "GarageArea",
+        "GarageQual",
+        "GarageCond",
+        "PavedDrive",
+        "WoodDeckSF",
+        "OpenPorchSF",
+        "EnclosedPorch",
+        "3SsnPorch",
+        "ScreenPorch",
+        "PoolArea",
+        "PoolQC",
+        "Fence",
+        "MiscFeature",
+        "MiscVal",
+        "MoSold",
+        "YrSold",
+        "SaleType",
+        "SaleCondition"
+    ],
+    "rows": 1460,
+    "cols": 80,
+    "target_is_numeric": true,
+    "columns_info": {
+        "Id": [
+            "scale"
+        ],
+        "MSSubClass": [
+            "scale"
+        ],
+        "MSZoning": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "LotFrontage": [
+            "missing_values",
+            "scale"
+        ],
+        "LotArea": [
+            "scale"
+        ],
+        "Street": [
+            "categorical",
+            "categorical_to_int"
+        ],
+        "Alley": [
+            "missing_values",
+            "categorical",
+            "categorical_to_int"
+        ],
+        "LotShape": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "LandContour": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "Utilities": [
+            "categorical",
+            "categorical_to_int"
+        ],
+        "LotConfig": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "LandSlope": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "Neighborhood": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "Condition1": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "Condition2": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "BldgType": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "HouseStyle": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "OverallQual": [
+            "scale"
+        ],
+        "OverallCond": [
+            "scale"
+        ],
+        "YearBuilt": [
+            "scale"
+        ],
+        "YearRemodAdd": [
+            "scale"
+        ],
+        "RoofStyle": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "RoofMatl": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "Exterior1st": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "Exterior2nd": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "MasVnrType": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "MasVnrArea": [
+            "missing_values",
+            "scale"
+        ],
+        "ExterQual": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "ExterCond": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "Foundation": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "BsmtQual": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "BsmtCond": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "BsmtExposure": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "BsmtFinType1": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "BsmtFinSF1": [
+            "scale"
+        ],
+        "BsmtFinType2": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "BsmtFinSF2": [
+            "scale"
+        ],
+        "BsmtUnfSF": [
+            "scale"
+        ],
+        "TotalBsmtSF": [
+            "scale"
+        ],
+        "Heating": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "HeatingQC": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "CentralAir": [
+            "categorical",
+            "categorical_to_int"
+        ],
+        "Electrical": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "1stFlrSF": [
+            "scale"
+        ],
+        "2ndFlrSF": [
+            "scale"
+        ],
+        "LowQualFinSF": [
+            "scale"
+        ],
+        "GrLivArea": [
+            "scale"
+        ],
+        "BsmtFullBath": [],
+        "BsmtHalfBath": [],
+        "FullBath": [
+            "scale"
+        ],
+        "HalfBath": [],
+        "BedroomAbvGr": [
+            "scale"
+        ],
+        "KitchenAbvGr": [
+            "scale"
+        ],
+        "KitchenQual": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "TotRmsAbvGrd": [
+            "scale"
+        ],
+        "Functional": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "Fireplaces": [
+            "scale"
+        ],
+        "FireplaceQu": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "GarageType": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "GarageYrBlt": [
+            "missing_values",
+            "scale"
+        ],
+        "GarageFinish": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "GarageCars": [
+            "scale"
+        ],
+        "GarageArea": [
+            "scale"
+        ],
+        "GarageQual": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "GarageCond": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "PavedDrive": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "WoodDeckSF": [
+            "scale"
+        ],
+        "OpenPorchSF": [
+            "scale"
+        ],
+        "EnclosedPorch": [
+            "scale"
+        ],
+        "3SsnPorch": [
+            "scale"
+        ],
+        "ScreenPorch": [
+            "scale"
+        ],
+        "PoolArea": [
+            "scale"
+        ],
+        "PoolQC": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "Fence": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "MiscFeature": [
+            "missing_values",
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "MiscVal": [
+            "scale"
+        ],
+        "MoSold": [
+            "scale"
+        ],
+        "YrSold": [
+            "scale"
+        ],
+        "SaleType": [
+            "categorical",
+            "categorical_to_onehot"
+        ],
+        "SaleCondition": [
+            "categorical",
+            "categorical_to_onehot"
+        ]
+    },
+    "target_info": [
+        "scale_log"
+    ],
+    "n_features": 80
+}
