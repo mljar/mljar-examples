@@ -1,0 +1,3223 @@
+{
+    "uid": "b23d0774-ff64-43a6-b4fd-a75df0b8af84",
+    "name": "1_Default_Xgboost",
+    "preprocessing": [
+        {
+            "missing_values": [
+                {
+                    "fill_method": "na_fill_median",
+                    "fill_params": {
+                        "LotFrontage": 68.0,
+                        "Alley": "Grvl",
+                        "MasVnrType": "None",
+                        "MasVnrArea": 0.0,
+                        "BsmtQual": "TA",
+                        "BsmtCond": "TA",
+                        "BsmtExposure": "No",
+                        "BsmtFinType1": "Unf",
+                        "BsmtFinType2": "Unf",
+                        "Electrical": "SBrkr",
+                        "FireplaceQu": "Gd",
+                        "GarageType": "Attchd",
+                        "GarageYrBlt": 1979.0,
+                        "GarageFinish": "Unf",
+                        "GarageQual": "TA",
+                        "GarageCond": "TA",
+                        "PoolQC": "Gd",
+                        "Fence": "MnPrv",
+                        "MiscFeature": "Shed"
+                    },
+                    "datetime_columns": []
+                }
+            ],
+            "categorical": [
+                {
+                    "convert_method": "categorical_to_int",
+                    "convert_params": {
+                        "Street": {
+                            "Grvl": 0,
+                            "Pave": 1
+                        },
+                        "Alley": {
+                            "Grvl": 0,
+                            "Pave": 1
+                        },
+                        "Utilities": {
+                            "AllPub": 0,
+                            "NoSeWa": 1
+                        },
+                        "CentralAir": {
+                            "N": 0,
+                            "Y": 1
+                        }
+                    }
+                },
+                {
+                    "convert_method": "categorical_to_onehot",
+                    "convert_params": {
+                        "MSZoning": {
+                            "new_columns": [
+                                "MSZoning_C (all)",
+                                "MSZoning_FV",
+                                "MSZoning_RH",
+                                "MSZoning_RL",
+                                "MSZoning_RM"
+                            ],
+                            "unique_values": [
+                                "C (all)",
+                                "FV",
+                                "RH",
+                                "RL",
+                                "RM"
+                            ],
+                            "old_column": "MSZoning"
+                        },
+                        "LotShape": {
+                            "new_columns": [
+                                "LotShape_IR1",
+                                "LotShape_IR2",
+                                "LotShape_IR3",
+                                "LotShape_Reg"
+                            ],
+                            "unique_values": [
+                                "IR1",
+                                "IR2",
+                                "IR3",
+                                "Reg"
+                            ],
+                            "old_column": "LotShape"
+                        },
+                        "LandContour": {
+                            "new_columns": [
+                                "LandContour_Bnk",
+                                "LandContour_HLS",
+                                "LandContour_Low",
+                                "LandContour_Lvl"
+                            ],
+                            "unique_values": [
+                                "Bnk",
+                                "HLS",
+                                "Low",
+                                "Lvl"
+                            ],
+                            "old_column": "LandContour"
+                        },
+                        "LotConfig": {
+                            "new_columns": [
+                                "LotConfig_Corner",
+                                "LotConfig_CulDSac",
+                                "LotConfig_FR2",
+                                "LotConfig_FR3",
+                                "LotConfig_Inside"
+                            ],
+                            "unique_values": [
+                                "Corner",
+                                "CulDSac",
+                                "FR2",
+                                "FR3",
+                                "Inside"
+                            ],
+                            "old_column": "LotConfig"
+                        },
+                        "LandSlope": {
+                            "new_columns": [
+                                "LandSlope_Gtl",
+                                "LandSlope_Mod",
+                                "LandSlope_Sev"
+                            ],
+                            "unique_values": [
+                                "Gtl",
+                                "Mod",
+                                "Sev"
+                            ],
+                            "old_column": "LandSlope"
+                        },
+                        "Neighborhood": {
+                            "new_columns": [
+                                "Neighborhood_Blmngtn",
+                                "Neighborhood_Blueste",
+                                "Neighborhood_BrDale",
+                                "Neighborhood_BrkSide",
+                                "Neighborhood_ClearCr",
+                                "Neighborhood_CollgCr",
+                                "Neighborhood_Crawfor",
+                                "Neighborhood_Edwards",
+                                "Neighborhood_Gilbert",
+                                "Neighborhood_IDOTRR",
+                                "Neighborhood_MeadowV",
+                                "Neighborhood_Mitchel",
+                                "Neighborhood_NAmes",
+                                "Neighborhood_NPkVill",
+                                "Neighborhood_NWAmes",
+                                "Neighborhood_NoRidge",
+                                "Neighborhood_NridgHt",
+                                "Neighborhood_OldTown",
+                                "Neighborhood_SWISU",
+                                "Neighborhood_Sawyer",
+                                "Neighborhood_SawyerW",
+                                "Neighborhood_Somerst",
+                                "Neighborhood_StoneBr",
+                                "Neighborhood_Timber",
+                                "Neighborhood_Veenker"
+                            ],
+                            "unique_values": [
+                                "Blmngtn",
+                                "Blueste",
+                                "BrDale",
+                                "BrkSide",
+                                "ClearCr",
+                                "CollgCr",
+                                "Crawfor",
+                                "Edwards",
+                                "Gilbert",
+                                "IDOTRR",
+                                "MeadowV",
+                                "Mitchel",
+                                "NAmes",
+                                "NPkVill",
+                                "NWAmes",
+                                "NoRidge",
+                                "NridgHt",
+                                "OldTown",
+                                "SWISU",
+                                "Sawyer",
+                                "SawyerW",
+                                "Somerst",
+                                "StoneBr",
+                                "Timber",
+                                "Veenker"
+                            ],
+                            "old_column": "Neighborhood"
+                        },
+                        "Condition1": {
+                            "new_columns": [
+                                "Condition1_Artery",
+                                "Condition1_Feedr",
+                                "Condition1_Norm",
+                                "Condition1_PosA",
+                                "Condition1_PosN",
+                                "Condition1_RRAe",
+                                "Condition1_RRAn",
+                                "Condition1_RRNn"
+                            ],
+                            "unique_values": [
+                                "Artery",
+                                "Feedr",
+                                "Norm",
+                                "PosA",
+                                "PosN",
+                                "RRAe",
+                                "RRAn",
+                                "RRNn"
+                            ],
+                            "old_column": "Condition1"
+                        },
+                        "Condition2": {
+                            "new_columns": [
+                                "Condition2_Artery",
+                                "Condition2_Feedr",
+                                "Condition2_Norm",
+                                "Condition2_PosA",
+                                "Condition2_PosN",
+                                "Condition2_RRAe",
+                                "Condition2_RRAn",
+                                "Condition2_RRNn"
+                            ],
+                            "unique_values": [
+                                "Artery",
+                                "Feedr",
+                                "Norm",
+                                "PosA",
+                                "PosN",
+                                "RRAe",
+                                "RRAn",
+                                "RRNn"
+                            ],
+                            "old_column": "Condition2"
+                        },
+                        "BldgType": {
+                            "new_columns": [
+                                "BldgType_1Fam",
+                                "BldgType_2fmCon",
+                                "BldgType_Duplex",
+                                "BldgType_Twnhs",
+                                "BldgType_TwnhsE"
+                            ],
+                            "unique_values": [
+                                "1Fam",
+                                "2fmCon",
+                                "Duplex",
+                                "Twnhs",
+                                "TwnhsE"
+                            ],
+                            "old_column": "BldgType"
+                        },
+                        "HouseStyle": {
+                            "new_columns": [
+                                "HouseStyle_1.5Fin",
+                                "HouseStyle_1.5Unf",
+                                "HouseStyle_1Story",
+                                "HouseStyle_2.5Fin",
+                                "HouseStyle_2.5Unf",
+                                "HouseStyle_2Story",
+                                "HouseStyle_SFoyer",
+                                "HouseStyle_SLvl"
+                            ],
+                            "unique_values": [
+                                "1.5Fin",
+                                "1.5Unf",
+                                "1Story",
+                                "2.5Fin",
+                                "2.5Unf",
+                                "2Story",
+                                "SFoyer",
+                                "SLvl"
+                            ],
+                            "old_column": "HouseStyle"
+                        },
+                        "RoofStyle": {
+                            "new_columns": [
+                                "RoofStyle_Flat",
+                                "RoofStyle_Gable",
+                                "RoofStyle_Gambrel",
+                                "RoofStyle_Hip",
+                                "RoofStyle_Mansard",
+                                "RoofStyle_Shed"
+                            ],
+                            "unique_values": [
+                                "Flat",
+                                "Gable",
+                                "Gambrel",
+                                "Hip",
+                                "Mansard",
+                                "Shed"
+                            ],
+                            "old_column": "RoofStyle"
+                        },
+                        "RoofMatl": {
+                            "new_columns": [
+                                "RoofMatl_ClyTile",
+                                "RoofMatl_CompShg",
+                                "RoofMatl_Roll",
+                                "RoofMatl_Tar&Grv",
+                                "RoofMatl_WdShake",
+                                "RoofMatl_WdShngl"
+                            ],
+                            "unique_values": [
+                                "ClyTile",
+                                "CompShg",
+                                "Roll",
+                                "Tar&Grv",
+                                "WdShake",
+                                "WdShngl"
+                            ],
+                            "old_column": "RoofMatl"
+                        },
+                        "Exterior1st": {
+                            "new_columns": [
+                                "Exterior1st_AsbShng",
+                                "Exterior1st_AsphShn",
+                                "Exterior1st_BrkComm",
+                                "Exterior1st_BrkFace",
+                                "Exterior1st_CBlock",
+                                "Exterior1st_CemntBd",
+                                "Exterior1st_HdBoard",
+                                "Exterior1st_ImStucc",
+                                "Exterior1st_MetalSd",
+                                "Exterior1st_Plywood",
+                                "Exterior1st_Stone",
+                                "Exterior1st_Stucco",
+                                "Exterior1st_VinylSd",
+                                "Exterior1st_Wd Sdng",
+                                "Exterior1st_WdShing"
+                            ],
+                            "unique_values": [
+                                "AsbShng",
+                                "AsphShn",
+                                "BrkComm",
+                                "BrkFace",
+                                "CBlock",
+                                "CemntBd",
+                                "HdBoard",
+                                "ImStucc",
+                                "MetalSd",
+                                "Plywood",
+                                "Stone",
+                                "Stucco",
+                                "VinylSd",
+                                "Wd Sdng",
+                                "WdShing"
+                            ],
+                            "old_column": "Exterior1st"
+                        },
+                        "Exterior2nd": {
+                            "new_columns": [
+                                "Exterior2nd_AsbShng",
+                                "Exterior2nd_AsphShn",
+                                "Exterior2nd_Brk Cmn",
+                                "Exterior2nd_BrkFace",
+                                "Exterior2nd_CBlock",
+                                "Exterior2nd_CmentBd",
+                                "Exterior2nd_HdBoard",
+                                "Exterior2nd_ImStucc",
+                                "Exterior2nd_MetalSd",
+                                "Exterior2nd_Other",
+                                "Exterior2nd_Plywood",
+                                "Exterior2nd_Stone",
+                                "Exterior2nd_Stucco",
+                                "Exterior2nd_VinylSd",
+                                "Exterior2nd_Wd Sdng",
+                                "Exterior2nd_Wd Shng"
+                            ],
+                            "unique_values": [
+                                "AsbShng",
+                                "AsphShn",
+                                "Brk Cmn",
+                                "BrkFace",
+                                "CBlock",
+                                "CmentBd",
+                                "HdBoard",
+                                "ImStucc",
+                                "MetalSd",
+                                "Other",
+                                "Plywood",
+                                "Stone",
+                                "Stucco",
+                                "VinylSd",
+                                "Wd Sdng",
+                                "Wd Shng"
+                            ],
+                            "old_column": "Exterior2nd"
+                        },
+                        "MasVnrType": {
+                            "new_columns": [
+                                "MasVnrType_BrkCmn",
+                                "MasVnrType_BrkFace",
+                                "MasVnrType_None",
+                                "MasVnrType_Stone"
+                            ],
+                            "unique_values": [
+                                "BrkCmn",
+                                "BrkFace",
+                                "None",
+                                "Stone"
+                            ],
+                            "old_column": "MasVnrType"
+                        },
+                        "ExterQual": {
+                            "new_columns": [
+                                "ExterQual_Ex",
+                                "ExterQual_Fa",
+                                "ExterQual_Gd",
+                                "ExterQual_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "TA"
+                            ],
+                            "old_column": "ExterQual"
+                        },
+                        "ExterCond": {
+                            "new_columns": [
+                                "ExterCond_Ex",
+                                "ExterCond_Fa",
+                                "ExterCond_Gd",
+                                "ExterCond_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "TA"
+                            ],
+                            "old_column": "ExterCond"
+                        },
+                        "Foundation": {
+                            "new_columns": [
+                                "Foundation_BrkTil",
+                                "Foundation_CBlock",
+                                "Foundation_PConc",
+                                "Foundation_Slab",
+                                "Foundation_Stone",
+                                "Foundation_Wood"
+                            ],
+                            "unique_values": [
+                                "BrkTil",
+                                "CBlock",
+                                "PConc",
+                                "Slab",
+                                "Stone",
+                                "Wood"
+                            ],
+                            "old_column": "Foundation"
+                        },
+                        "BsmtQual": {
+                            "new_columns": [
+                                "BsmtQual_Ex",
+                                "BsmtQual_Fa",
+                                "BsmtQual_Gd",
+                                "BsmtQual_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "TA"
+                            ],
+                            "old_column": "BsmtQual"
+                        },
+                        "BsmtCond": {
+                            "new_columns": [
+                                "BsmtCond_Fa",
+                                "BsmtCond_Gd",
+                                "BsmtCond_TA"
+                            ],
+                            "unique_values": [
+                                "Fa",
+                                "Gd",
+                                "TA"
+                            ],
+                            "old_column": "BsmtCond"
+                        },
+                        "BsmtExposure": {
+                            "new_columns": [
+                                "BsmtExposure_Av",
+                                "BsmtExposure_Gd",
+                                "BsmtExposure_Mn",
+                                "BsmtExposure_No"
+                            ],
+                            "unique_values": [
+                                "Av",
+                                "Gd",
+                                "Mn",
+                                "No"
+                            ],
+                            "old_column": "BsmtExposure"
+                        },
+                        "BsmtFinType1": {
+                            "new_columns": [
+                                "BsmtFinType1_ALQ",
+                                "BsmtFinType1_BLQ",
+                                "BsmtFinType1_GLQ",
+                                "BsmtFinType1_LwQ",
+                                "BsmtFinType1_Rec",
+                                "BsmtFinType1_Unf"
+                            ],
+                            "unique_values": [
+                                "ALQ",
+                                "BLQ",
+                                "GLQ",
+                                "LwQ",
+                                "Rec",
+                                "Unf"
+                            ],
+                            "old_column": "BsmtFinType1"
+                        },
+                        "BsmtFinType2": {
+                            "new_columns": [
+                                "BsmtFinType2_ALQ",
+                                "BsmtFinType2_BLQ",
+                                "BsmtFinType2_GLQ",
+                                "BsmtFinType2_LwQ",
+                                "BsmtFinType2_Rec",
+                                "BsmtFinType2_Unf"
+                            ],
+                            "unique_values": [
+                                "ALQ",
+                                "BLQ",
+                                "GLQ",
+                                "LwQ",
+                                "Rec",
+                                "Unf"
+                            ],
+                            "old_column": "BsmtFinType2"
+                        },
+                        "Heating": {
+                            "new_columns": [
+                                "Heating_Floor",
+                                "Heating_GasA",
+                                "Heating_GasW",
+                                "Heating_Grav",
+                                "Heating_OthW",
+                                "Heating_Wall"
+                            ],
+                            "unique_values": [
+                                "Floor",
+                                "GasA",
+                                "GasW",
+                                "Grav",
+                                "OthW",
+                                "Wall"
+                            ],
+                            "old_column": "Heating"
+                        },
+                        "HeatingQC": {
+                            "new_columns": [
+                                "HeatingQC_Ex",
+                                "HeatingQC_Fa",
+                                "HeatingQC_Gd",
+                                "HeatingQC_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "TA"
+                            ],
+                            "old_column": "HeatingQC"
+                        },
+                        "Electrical": {
+                            "new_columns": [
+                                "Electrical_FuseA",
+                                "Electrical_FuseF",
+                                "Electrical_SBrkr"
+                            ],
+                            "unique_values": [
+                                "FuseA",
+                                "FuseF",
+                                "SBrkr"
+                            ],
+                            "old_column": "Electrical"
+                        },
+                        "KitchenQual": {
+                            "new_columns": [
+                                "KitchenQual_Ex",
+                                "KitchenQual_Fa",
+                                "KitchenQual_Gd",
+                                "KitchenQual_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "TA"
+                            ],
+                            "old_column": "KitchenQual"
+                        },
+                        "Functional": {
+                            "new_columns": [
+                                "Functional_Maj1",
+                                "Functional_Maj2",
+                                "Functional_Min1",
+                                "Functional_Min2",
+                                "Functional_Mod",
+                                "Functional_Sev",
+                                "Functional_Typ"
+                            ],
+                            "unique_values": [
+                                "Maj1",
+                                "Maj2",
+                                "Min1",
+                                "Min2",
+                                "Mod",
+                                "Sev",
+                                "Typ"
+                            ],
+                            "old_column": "Functional"
+                        },
+                        "FireplaceQu": {
+                            "new_columns": [
+                                "FireplaceQu_Ex",
+                                "FireplaceQu_Fa",
+                                "FireplaceQu_Gd",
+                                "FireplaceQu_Po",
+                                "FireplaceQu_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "FireplaceQu"
+                        },
+                        "GarageType": {
+                            "new_columns": [
+                                "GarageType_2Types",
+                                "GarageType_Attchd",
+                                "GarageType_Basment",
+                                "GarageType_BuiltIn",
+                                "GarageType_CarPort",
+                                "GarageType_Detchd"
+                            ],
+                            "unique_values": [
+                                "2Types",
+                                "Attchd",
+                                "Basment",
+                                "BuiltIn",
+                                "CarPort",
+                                "Detchd"
+                            ],
+                            "old_column": "GarageType"
+                        },
+                        "GarageFinish": {
+                            "new_columns": [
+                                "GarageFinish_Fin",
+                                "GarageFinish_RFn",
+                                "GarageFinish_Unf"
+                            ],
+                            "unique_values": [
+                                "Fin",
+                                "RFn",
+                                "Unf"
+                            ],
+                            "old_column": "GarageFinish"
+                        },
+                        "GarageQual": {
+                            "new_columns": [
+                                "GarageQual_Ex",
+                                "GarageQual_Fa",
+                                "GarageQual_Gd",
+                                "GarageQual_Po",
+                                "GarageQual_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "GarageQual"
+                        },
+                        "GarageCond": {
+                            "new_columns": [
+                                "GarageCond_Ex",
+                                "GarageCond_Fa",
+                                "GarageCond_Gd",
+                                "GarageCond_Po",
+                                "GarageCond_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "GarageCond"
+                        },
+                        "PavedDrive": {
+                            "new_columns": [
+                                "PavedDrive_N",
+                                "PavedDrive_P",
+                                "PavedDrive_Y"
+                            ],
+                            "unique_values": [
+                                "N",
+                                "P",
+                                "Y"
+                            ],
+                            "old_column": "PavedDrive"
+                        },
+                        "PoolQC": {
+                            "new_columns": [
+                                "PoolQC_Ex",
+                                "PoolQC_Fa",
+                                "PoolQC_Gd"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd"
+                            ],
+                            "old_column": "PoolQC"
+                        },
+                        "Fence": {
+                            "new_columns": [
+                                "Fence_GdPrv",
+                                "Fence_GdWo",
+                                "Fence_MnPrv",
+                                "Fence_MnWw"
+                            ],
+                            "unique_values": [
+                                "GdPrv",
+                                "GdWo",
+                                "MnPrv",
+                                "MnWw"
+                            ],
+                            "old_column": "Fence"
+                        },
+                        "MiscFeature": {
+                            "new_columns": [
+                                "MiscFeature_Gar2",
+                                "MiscFeature_Othr",
+                                "MiscFeature_Shed",
+                                "MiscFeature_TenC"
+                            ],
+                            "unique_values": [
+                                "Gar2",
+                                "Othr",
+                                "Shed",
+                                "TenC"
+                            ],
+                            "old_column": "MiscFeature"
+                        },
+                        "SaleType": {
+                            "new_columns": [
+                                "SaleType_COD",
+                                "SaleType_CWD",
+                                "SaleType_Con",
+                                "SaleType_ConLD",
+                                "SaleType_ConLI",
+                                "SaleType_ConLw",
+                                "SaleType_New",
+                                "SaleType_Oth",
+                                "SaleType_WD"
+                            ],
+                            "unique_values": [
+                                "COD",
+                                "CWD",
+                                "Con",
+                                "ConLD",
+                                "ConLI",
+                                "ConLw",
+                                "New",
+                                "Oth",
+                                "WD"
+                            ],
+                            "old_column": "SaleType"
+                        },
+                        "SaleCondition": {
+                            "new_columns": [
+                                "SaleCondition_Abnorml",
+                                "SaleCondition_AdjLand",
+                                "SaleCondition_Alloca",
+                                "SaleCondition_Family",
+                                "SaleCondition_Normal",
+                                "SaleCondition_Partial"
+                            ],
+                            "unique_values": [
+                                "Abnorml",
+                                "AdjLand",
+                                "Alloca",
+                                "Family",
+                                "Normal",
+                                "Partial"
+                            ],
+                            "old_column": "SaleCondition"
+                        }
+                    }
+                }
+            ],
+            "scale_y": {
+                "scale": [
+                    0.6732067820122272
+                ],
+                "mean": [
+                    11.736420194972537
+                ],
+                "var": [
+                    0.4532073713472583
+                ],
+                "n_samples_seen": 973,
+                "n_features_in": 1,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    34900.0
+                ]
+            },
+            "ml_task": "regression",
+            "params": {
+                "columns_preprocessing": {
+                    "MSZoning": [
+                        "categorical_to_onehot"
+                    ],
+                    "LotFrontage": [
+                        "na_fill_median"
+                    ],
+                    "Street": [
+                        "categorical_to_int"
+                    ],
+                    "Alley": [
+                        "na_fill_median",
+                        "categorical_to_int"
+                    ],
+                    "LotShape": [
+                        "categorical_to_onehot"
+                    ],
+                    "LandContour": [
+                        "categorical_to_onehot"
+                    ],
+                    "Utilities": [
+                        "categorical_to_int"
+                    ],
+                    "LotConfig": [
+                        "categorical_to_onehot"
+                    ],
+                    "LandSlope": [
+                        "categorical_to_onehot"
+                    ],
+                    "Neighborhood": [
+                        "categorical_to_onehot"
+                    ],
+                    "Condition1": [
+                        "categorical_to_onehot"
+                    ],
+                    "Condition2": [
+                        "categorical_to_onehot"
+                    ],
+                    "BldgType": [
+                        "categorical_to_onehot"
+                    ],
+                    "HouseStyle": [
+                        "categorical_to_onehot"
+                    ],
+                    "RoofStyle": [
+                        "categorical_to_onehot"
+                    ],
+                    "RoofMatl": [
+                        "categorical_to_onehot"
+                    ],
+                    "Exterior1st": [
+                        "categorical_to_onehot"
+                    ],
+                    "Exterior2nd": [
+                        "categorical_to_onehot"
+                    ],
+                    "MasVnrType": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "MasVnrArea": [
+                        "na_fill_median"
+                    ],
+                    "ExterQual": [
+                        "categorical_to_onehot"
+                    ],
+                    "ExterCond": [
+                        "categorical_to_onehot"
+                    ],
+                    "Foundation": [
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtQual": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtCond": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtExposure": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtFinType1": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtFinType2": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "Heating": [
+                        "categorical_to_onehot"
+                    ],
+                    "HeatingQC": [
+                        "categorical_to_onehot"
+                    ],
+                    "CentralAir": [
+                        "categorical_to_int"
+                    ],
+                    "Electrical": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "KitchenQual": [
+                        "categorical_to_onehot"
+                    ],
+                    "Functional": [
+                        "categorical_to_onehot"
+                    ],
+                    "FireplaceQu": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "GarageType": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "GarageYrBlt": [
+                        "na_fill_median"
+                    ],
+                    "GarageFinish": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "GarageQual": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "GarageCond": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "PavedDrive": [
+                        "categorical_to_onehot"
+                    ],
+                    "PoolQC": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "Fence": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "MiscFeature": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "SaleType": [
+                        "categorical_to_onehot"
+                    ],
+                    "SaleCondition": [
+                        "categorical_to_onehot"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "scale_log_and_normal"
+                ],
+                "ml_task": "regression"
+            }
+        },
+        {
+            "missing_values": [
+                {
+                    "fill_method": "na_fill_median",
+                    "fill_params": {
+                        "LotFrontage": 69.5,
+                        "Alley": "Grvl",
+                        "MasVnrType": "None",
+                        "MasVnrArea": 0.0,
+                        "BsmtQual": "TA",
+                        "BsmtCond": "TA",
+                        "BsmtExposure": "No",
+                        "BsmtFinType1": "Unf",
+                        "BsmtFinType2": "Unf",
+                        "Electrical": "SBrkr",
+                        "FireplaceQu": "Gd",
+                        "GarageType": "Attchd",
+                        "GarageYrBlt": 1980.0,
+                        "GarageFinish": "Unf",
+                        "GarageQual": "TA",
+                        "GarageCond": "TA",
+                        "PoolQC": "Gd",
+                        "Fence": "MnPrv",
+                        "MiscFeature": "Shed"
+                    },
+                    "datetime_columns": []
+                }
+            ],
+            "categorical": [
+                {
+                    "convert_method": "categorical_to_int",
+                    "convert_params": {
+                        "Street": {
+                            "Grvl": 0,
+                            "Pave": 1
+                        },
+                        "Alley": {
+                            "Grvl": 0,
+                            "Pave": 1
+                        },
+                        "Utilities": {
+                            "AllPub": 0
+                        },
+                        "CentralAir": {
+                            "N": 0,
+                            "Y": 1
+                        }
+                    }
+                },
+                {
+                    "convert_method": "categorical_to_onehot",
+                    "convert_params": {
+                        "MSZoning": {
+                            "new_columns": [
+                                "MSZoning_C (all)",
+                                "MSZoning_FV",
+                                "MSZoning_RH",
+                                "MSZoning_RL",
+                                "MSZoning_RM"
+                            ],
+                            "unique_values": [
+                                "C (all)",
+                                "FV",
+                                "RH",
+                                "RL",
+                                "RM"
+                            ],
+                            "old_column": "MSZoning"
+                        },
+                        "LotShape": {
+                            "new_columns": [
+                                "LotShape_IR1",
+                                "LotShape_IR2",
+                                "LotShape_IR3",
+                                "LotShape_Reg"
+                            ],
+                            "unique_values": [
+                                "IR1",
+                                "IR2",
+                                "IR3",
+                                "Reg"
+                            ],
+                            "old_column": "LotShape"
+                        },
+                        "LandContour": {
+                            "new_columns": [
+                                "LandContour_Bnk",
+                                "LandContour_HLS",
+                                "LandContour_Low",
+                                "LandContour_Lvl"
+                            ],
+                            "unique_values": [
+                                "Bnk",
+                                "HLS",
+                                "Low",
+                                "Lvl"
+                            ],
+                            "old_column": "LandContour"
+                        },
+                        "LotConfig": {
+                            "new_columns": [
+                                "LotConfig_Corner",
+                                "LotConfig_CulDSac",
+                                "LotConfig_FR2",
+                                "LotConfig_FR3",
+                                "LotConfig_Inside"
+                            ],
+                            "unique_values": [
+                                "Corner",
+                                "CulDSac",
+                                "FR2",
+                                "FR3",
+                                "Inside"
+                            ],
+                            "old_column": "LotConfig"
+                        },
+                        "LandSlope": {
+                            "new_columns": [
+                                "LandSlope_Gtl",
+                                "LandSlope_Mod",
+                                "LandSlope_Sev"
+                            ],
+                            "unique_values": [
+                                "Gtl",
+                                "Mod",
+                                "Sev"
+                            ],
+                            "old_column": "LandSlope"
+                        },
+                        "Neighborhood": {
+                            "new_columns": [
+                                "Neighborhood_Blmngtn",
+                                "Neighborhood_BrDale",
+                                "Neighborhood_BrkSide",
+                                "Neighborhood_ClearCr",
+                                "Neighborhood_CollgCr",
+                                "Neighborhood_Crawfor",
+                                "Neighborhood_Edwards",
+                                "Neighborhood_Gilbert",
+                                "Neighborhood_IDOTRR",
+                                "Neighborhood_MeadowV",
+                                "Neighborhood_Mitchel",
+                                "Neighborhood_NAmes",
+                                "Neighborhood_NPkVill",
+                                "Neighborhood_NWAmes",
+                                "Neighborhood_NoRidge",
+                                "Neighborhood_NridgHt",
+                                "Neighborhood_OldTown",
+                                "Neighborhood_SWISU",
+                                "Neighborhood_Sawyer",
+                                "Neighborhood_SawyerW",
+                                "Neighborhood_Somerst",
+                                "Neighborhood_StoneBr",
+                                "Neighborhood_Timber",
+                                "Neighborhood_Veenker"
+                            ],
+                            "unique_values": [
+                                "Blmngtn",
+                                "BrDale",
+                                "BrkSide",
+                                "ClearCr",
+                                "CollgCr",
+                                "Crawfor",
+                                "Edwards",
+                                "Gilbert",
+                                "IDOTRR",
+                                "MeadowV",
+                                "Mitchel",
+                                "NAmes",
+                                "NPkVill",
+                                "NWAmes",
+                                "NoRidge",
+                                "NridgHt",
+                                "OldTown",
+                                "SWISU",
+                                "Sawyer",
+                                "SawyerW",
+                                "Somerst",
+                                "StoneBr",
+                                "Timber",
+                                "Veenker"
+                            ],
+                            "old_column": "Neighborhood"
+                        },
+                        "Condition1": {
+                            "new_columns": [
+                                "Condition1_Artery",
+                                "Condition1_Feedr",
+                                "Condition1_Norm",
+                                "Condition1_PosA",
+                                "Condition1_PosN",
+                                "Condition1_RRAe",
+                                "Condition1_RRAn",
+                                "Condition1_RRNe",
+                                "Condition1_RRNn"
+                            ],
+                            "unique_values": [
+                                "Artery",
+                                "Feedr",
+                                "Norm",
+                                "PosA",
+                                "PosN",
+                                "RRAe",
+                                "RRAn",
+                                "RRNe",
+                                "RRNn"
+                            ],
+                            "old_column": "Condition1"
+                        },
+                        "Condition2": {
+                            "new_columns": [
+                                "Condition2_Artery",
+                                "Condition2_Feedr",
+                                "Condition2_Norm",
+                                "Condition2_RRAe",
+                                "Condition2_RRAn",
+                                "Condition2_RRNn"
+                            ],
+                            "unique_values": [
+                                "Artery",
+                                "Feedr",
+                                "Norm",
+                                "RRAe",
+                                "RRAn",
+                                "RRNn"
+                            ],
+                            "old_column": "Condition2"
+                        },
+                        "BldgType": {
+                            "new_columns": [
+                                "BldgType_1Fam",
+                                "BldgType_2fmCon",
+                                "BldgType_Duplex",
+                                "BldgType_Twnhs",
+                                "BldgType_TwnhsE"
+                            ],
+                            "unique_values": [
+                                "1Fam",
+                                "2fmCon",
+                                "Duplex",
+                                "Twnhs",
+                                "TwnhsE"
+                            ],
+                            "old_column": "BldgType"
+                        },
+                        "HouseStyle": {
+                            "new_columns": [
+                                "HouseStyle_1.5Fin",
+                                "HouseStyle_1.5Unf",
+                                "HouseStyle_1Story",
+                                "HouseStyle_2.5Fin",
+                                "HouseStyle_2.5Unf",
+                                "HouseStyle_2Story",
+                                "HouseStyle_SFoyer",
+                                "HouseStyle_SLvl"
+                            ],
+                            "unique_values": [
+                                "1.5Fin",
+                                "1.5Unf",
+                                "1Story",
+                                "2.5Fin",
+                                "2.5Unf",
+                                "2Story",
+                                "SFoyer",
+                                "SLvl"
+                            ],
+                            "old_column": "HouseStyle"
+                        },
+                        "RoofStyle": {
+                            "new_columns": [
+                                "RoofStyle_Flat",
+                                "RoofStyle_Gable",
+                                "RoofStyle_Gambrel",
+                                "RoofStyle_Hip",
+                                "RoofStyle_Mansard",
+                                "RoofStyle_Shed"
+                            ],
+                            "unique_values": [
+                                "Flat",
+                                "Gable",
+                                "Gambrel",
+                                "Hip",
+                                "Mansard",
+                                "Shed"
+                            ],
+                            "old_column": "RoofStyle"
+                        },
+                        "RoofMatl": {
+                            "new_columns": [
+                                "RoofMatl_ClyTile",
+                                "RoofMatl_CompShg",
+                                "RoofMatl_Membran",
+                                "RoofMatl_Metal",
+                                "RoofMatl_Roll",
+                                "RoofMatl_Tar&Grv",
+                                "RoofMatl_WdShake",
+                                "RoofMatl_WdShngl"
+                            ],
+                            "unique_values": [
+                                "ClyTile",
+                                "CompShg",
+                                "Membran",
+                                "Metal",
+                                "Roll",
+                                "Tar&Grv",
+                                "WdShake",
+                                "WdShngl"
+                            ],
+                            "old_column": "RoofMatl"
+                        },
+                        "Exterior1st": {
+                            "new_columns": [
+                                "Exterior1st_AsbShng",
+                                "Exterior1st_AsphShn",
+                                "Exterior1st_BrkComm",
+                                "Exterior1st_BrkFace",
+                                "Exterior1st_CBlock",
+                                "Exterior1st_CemntBd",
+                                "Exterior1st_HdBoard",
+                                "Exterior1st_ImStucc",
+                                "Exterior1st_MetalSd",
+                                "Exterior1st_Plywood",
+                                "Exterior1st_Stone",
+                                "Exterior1st_Stucco",
+                                "Exterior1st_VinylSd",
+                                "Exterior1st_Wd Sdng",
+                                "Exterior1st_WdShing"
+                            ],
+                            "unique_values": [
+                                "AsbShng",
+                                "AsphShn",
+                                "BrkComm",
+                                "BrkFace",
+                                "CBlock",
+                                "CemntBd",
+                                "HdBoard",
+                                "ImStucc",
+                                "MetalSd",
+                                "Plywood",
+                                "Stone",
+                                "Stucco",
+                                "VinylSd",
+                                "Wd Sdng",
+                                "WdShing"
+                            ],
+                            "old_column": "Exterior1st"
+                        },
+                        "Exterior2nd": {
+                            "new_columns": [
+                                "Exterior2nd_AsbShng",
+                                "Exterior2nd_AsphShn",
+                                "Exterior2nd_Brk Cmn",
+                                "Exterior2nd_BrkFace",
+                                "Exterior2nd_CBlock",
+                                "Exterior2nd_CmentBd",
+                                "Exterior2nd_HdBoard",
+                                "Exterior2nd_ImStucc",
+                                "Exterior2nd_MetalSd",
+                                "Exterior2nd_Plywood",
+                                "Exterior2nd_Stone",
+                                "Exterior2nd_Stucco",
+                                "Exterior2nd_VinylSd",
+                                "Exterior2nd_Wd Sdng",
+                                "Exterior2nd_Wd Shng"
+                            ],
+                            "unique_values": [
+                                "AsbShng",
+                                "AsphShn",
+                                "Brk Cmn",
+                                "BrkFace",
+                                "CBlock",
+                                "CmentBd",
+                                "HdBoard",
+                                "ImStucc",
+                                "MetalSd",
+                                "Plywood",
+                                "Stone",
+                                "Stucco",
+                                "VinylSd",
+                                "Wd Sdng",
+                                "Wd Shng"
+                            ],
+                            "old_column": "Exterior2nd"
+                        },
+                        "MasVnrType": {
+                            "new_columns": [
+                                "MasVnrType_BrkCmn",
+                                "MasVnrType_BrkFace",
+                                "MasVnrType_None",
+                                "MasVnrType_Stone"
+                            ],
+                            "unique_values": [
+                                "BrkCmn",
+                                "BrkFace",
+                                "None",
+                                "Stone"
+                            ],
+                            "old_column": "MasVnrType"
+                        },
+                        "ExterQual": {
+                            "new_columns": [
+                                "ExterQual_Ex",
+                                "ExterQual_Fa",
+                                "ExterQual_Gd",
+                                "ExterQual_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "TA"
+                            ],
+                            "old_column": "ExterQual"
+                        },
+                        "ExterCond": {
+                            "new_columns": [
+                                "ExterCond_Ex",
+                                "ExterCond_Fa",
+                                "ExterCond_Gd",
+                                "ExterCond_Po",
+                                "ExterCond_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "ExterCond"
+                        },
+                        "Foundation": {
+                            "new_columns": [
+                                "Foundation_BrkTil",
+                                "Foundation_CBlock",
+                                "Foundation_PConc",
+                                "Foundation_Slab",
+                                "Foundation_Stone",
+                                "Foundation_Wood"
+                            ],
+                            "unique_values": [
+                                "BrkTil",
+                                "CBlock",
+                                "PConc",
+                                "Slab",
+                                "Stone",
+                                "Wood"
+                            ],
+                            "old_column": "Foundation"
+                        },
+                        "BsmtQual": {
+                            "new_columns": [
+                                "BsmtQual_Ex",
+                                "BsmtQual_Fa",
+                                "BsmtQual_Gd",
+                                "BsmtQual_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "TA"
+                            ],
+                            "old_column": "BsmtQual"
+                        },
+                        "BsmtCond": {
+                            "new_columns": [
+                                "BsmtCond_Fa",
+                                "BsmtCond_Gd",
+                                "BsmtCond_Po",
+                                "BsmtCond_TA"
+                            ],
+                            "unique_values": [
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "BsmtCond"
+                        },
+                        "BsmtExposure": {
+                            "new_columns": [
+                                "BsmtExposure_Av",
+                                "BsmtExposure_Gd",
+                                "BsmtExposure_Mn",
+                                "BsmtExposure_No"
+                            ],
+                            "unique_values": [
+                                "Av",
+                                "Gd",
+                                "Mn",
+                                "No"
+                            ],
+                            "old_column": "BsmtExposure"
+                        },
+                        "BsmtFinType1": {
+                            "new_columns": [
+                                "BsmtFinType1_ALQ",
+                                "BsmtFinType1_BLQ",
+                                "BsmtFinType1_GLQ",
+                                "BsmtFinType1_LwQ",
+                                "BsmtFinType1_Rec",
+                                "BsmtFinType1_Unf"
+                            ],
+                            "unique_values": [
+                                "ALQ",
+                                "BLQ",
+                                "GLQ",
+                                "LwQ",
+                                "Rec",
+                                "Unf"
+                            ],
+                            "old_column": "BsmtFinType1"
+                        },
+                        "BsmtFinType2": {
+                            "new_columns": [
+                                "BsmtFinType2_ALQ",
+                                "BsmtFinType2_BLQ",
+                                "BsmtFinType2_GLQ",
+                                "BsmtFinType2_LwQ",
+                                "BsmtFinType2_Rec",
+                                "BsmtFinType2_Unf"
+                            ],
+                            "unique_values": [
+                                "ALQ",
+                                "BLQ",
+                                "GLQ",
+                                "LwQ",
+                                "Rec",
+                                "Unf"
+                            ],
+                            "old_column": "BsmtFinType2"
+                        },
+                        "Heating": {
+                            "new_columns": [
+                                "Heating_Floor",
+                                "Heating_GasA",
+                                "Heating_GasW",
+                                "Heating_Grav",
+                                "Heating_OthW",
+                                "Heating_Wall"
+                            ],
+                            "unique_values": [
+                                "Floor",
+                                "GasA",
+                                "GasW",
+                                "Grav",
+                                "OthW",
+                                "Wall"
+                            ],
+                            "old_column": "Heating"
+                        },
+                        "HeatingQC": {
+                            "new_columns": [
+                                "HeatingQC_Ex",
+                                "HeatingQC_Fa",
+                                "HeatingQC_Gd",
+                                "HeatingQC_Po",
+                                "HeatingQC_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "HeatingQC"
+                        },
+                        "Electrical": {
+                            "new_columns": [
+                                "Electrical_FuseA",
+                                "Electrical_FuseF",
+                                "Electrical_FuseP",
+                                "Electrical_Mix",
+                                "Electrical_SBrkr"
+                            ],
+                            "unique_values": [
+                                "FuseA",
+                                "FuseF",
+                                "FuseP",
+                                "Mix",
+                                "SBrkr"
+                            ],
+                            "old_column": "Electrical"
+                        },
+                        "KitchenQual": {
+                            "new_columns": [
+                                "KitchenQual_Ex",
+                                "KitchenQual_Fa",
+                                "KitchenQual_Gd",
+                                "KitchenQual_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "TA"
+                            ],
+                            "old_column": "KitchenQual"
+                        },
+                        "Functional": {
+                            "new_columns": [
+                                "Functional_Maj1",
+                                "Functional_Maj2",
+                                "Functional_Min1",
+                                "Functional_Min2",
+                                "Functional_Mod",
+                                "Functional_Typ"
+                            ],
+                            "unique_values": [
+                                "Maj1",
+                                "Maj2",
+                                "Min1",
+                                "Min2",
+                                "Mod",
+                                "Typ"
+                            ],
+                            "old_column": "Functional"
+                        },
+                        "FireplaceQu": {
+                            "new_columns": [
+                                "FireplaceQu_Ex",
+                                "FireplaceQu_Fa",
+                                "FireplaceQu_Gd",
+                                "FireplaceQu_Po",
+                                "FireplaceQu_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "FireplaceQu"
+                        },
+                        "GarageType": {
+                            "new_columns": [
+                                "GarageType_2Types",
+                                "GarageType_Attchd",
+                                "GarageType_Basment",
+                                "GarageType_BuiltIn",
+                                "GarageType_CarPort",
+                                "GarageType_Detchd"
+                            ],
+                            "unique_values": [
+                                "2Types",
+                                "Attchd",
+                                "Basment",
+                                "BuiltIn",
+                                "CarPort",
+                                "Detchd"
+                            ],
+                            "old_column": "GarageType"
+                        },
+                        "GarageFinish": {
+                            "new_columns": [
+                                "GarageFinish_Fin",
+                                "GarageFinish_RFn",
+                                "GarageFinish_Unf"
+                            ],
+                            "unique_values": [
+                                "Fin",
+                                "RFn",
+                                "Unf"
+                            ],
+                            "old_column": "GarageFinish"
+                        },
+                        "GarageQual": {
+                            "new_columns": [
+                                "GarageQual_Ex",
+                                "GarageQual_Fa",
+                                "GarageQual_Gd",
+                                "GarageQual_Po",
+                                "GarageQual_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "GarageQual"
+                        },
+                        "GarageCond": {
+                            "new_columns": [
+                                "GarageCond_Ex",
+                                "GarageCond_Fa",
+                                "GarageCond_Gd",
+                                "GarageCond_Po",
+                                "GarageCond_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "GarageCond"
+                        },
+                        "PavedDrive": {
+                            "new_columns": [
+                                "PavedDrive_N",
+                                "PavedDrive_P",
+                                "PavedDrive_Y"
+                            ],
+                            "unique_values": [
+                                "N",
+                                "P",
+                                "Y"
+                            ],
+                            "old_column": "PavedDrive"
+                        },
+                        "PoolQC": {
+                            "new_columns": [
+                                "PoolQC_Ex",
+                                "PoolQC_Fa",
+                                "PoolQC_Gd"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd"
+                            ],
+                            "old_column": "PoolQC"
+                        },
+                        "Fence": {
+                            "new_columns": [
+                                "Fence_GdPrv",
+                                "Fence_GdWo",
+                                "Fence_MnPrv",
+                                "Fence_MnWw"
+                            ],
+                            "unique_values": [
+                                "GdPrv",
+                                "GdWo",
+                                "MnPrv",
+                                "MnWw"
+                            ],
+                            "old_column": "Fence"
+                        },
+                        "MiscFeature": {
+                            "new_columns": [
+                                "MiscFeature_Gar2",
+                                "MiscFeature_Shed",
+                                "MiscFeature_TenC"
+                            ],
+                            "unique_values": [
+                                "Gar2",
+                                "Shed",
+                                "TenC"
+                            ],
+                            "old_column": "MiscFeature"
+                        },
+                        "SaleType": {
+                            "new_columns": [
+                                "SaleType_COD",
+                                "SaleType_CWD",
+                                "SaleType_Con",
+                                "SaleType_ConLD",
+                                "SaleType_ConLI",
+                                "SaleType_ConLw",
+                                "SaleType_New",
+                                "SaleType_Oth",
+                                "SaleType_WD"
+                            ],
+                            "unique_values": [
+                                "COD",
+                                "CWD",
+                                "Con",
+                                "ConLD",
+                                "ConLI",
+                                "ConLw",
+                                "New",
+                                "Oth",
+                                "WD"
+                            ],
+                            "old_column": "SaleType"
+                        },
+                        "SaleCondition": {
+                            "new_columns": [
+                                "SaleCondition_Abnorml",
+                                "SaleCondition_AdjLand",
+                                "SaleCondition_Alloca",
+                                "SaleCondition_Family",
+                                "SaleCondition_Normal",
+                                "SaleCondition_Partial"
+                            ],
+                            "unique_values": [
+                                "Abnorml",
+                                "AdjLand",
+                                "Alloca",
+                                "Family",
+                                "Normal",
+                                "Partial"
+                            ],
+                            "old_column": "SaleCondition"
+                        }
+                    }
+                }
+            ],
+            "scale_y": {
+                "scale": [
+                    0.6550174915199282
+                ],
+                "mean": [
+                    11.706521735964147
+                ],
+                "var": [
+                    0.42904791419705923
+                ],
+                "n_samples_seen": 973,
+                "n_features_in": 1,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    40000.0
+                ]
+            },
+            "ml_task": "regression",
+            "params": {
+                "columns_preprocessing": {
+                    "MSZoning": [
+                        "categorical_to_onehot"
+                    ],
+                    "LotFrontage": [
+                        "na_fill_median"
+                    ],
+                    "Street": [
+                        "categorical_to_int"
+                    ],
+                    "Alley": [
+                        "na_fill_median",
+                        "categorical_to_int"
+                    ],
+                    "LotShape": [
+                        "categorical_to_onehot"
+                    ],
+                    "LandContour": [
+                        "categorical_to_onehot"
+                    ],
+                    "Utilities": [
+                        "categorical_to_int"
+                    ],
+                    "LotConfig": [
+                        "categorical_to_onehot"
+                    ],
+                    "LandSlope": [
+                        "categorical_to_onehot"
+                    ],
+                    "Neighborhood": [
+                        "categorical_to_onehot"
+                    ],
+                    "Condition1": [
+                        "categorical_to_onehot"
+                    ],
+                    "Condition2": [
+                        "categorical_to_onehot"
+                    ],
+                    "BldgType": [
+                        "categorical_to_onehot"
+                    ],
+                    "HouseStyle": [
+                        "categorical_to_onehot"
+                    ],
+                    "RoofStyle": [
+                        "categorical_to_onehot"
+                    ],
+                    "RoofMatl": [
+                        "categorical_to_onehot"
+                    ],
+                    "Exterior1st": [
+                        "categorical_to_onehot"
+                    ],
+                    "Exterior2nd": [
+                        "categorical_to_onehot"
+                    ],
+                    "MasVnrType": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "MasVnrArea": [
+                        "na_fill_median"
+                    ],
+                    "ExterQual": [
+                        "categorical_to_onehot"
+                    ],
+                    "ExterCond": [
+                        "categorical_to_onehot"
+                    ],
+                    "Foundation": [
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtQual": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtCond": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtExposure": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtFinType1": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtFinType2": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "Heating": [
+                        "categorical_to_onehot"
+                    ],
+                    "HeatingQC": [
+                        "categorical_to_onehot"
+                    ],
+                    "CentralAir": [
+                        "categorical_to_int"
+                    ],
+                    "Electrical": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "KitchenQual": [
+                        "categorical_to_onehot"
+                    ],
+                    "Functional": [
+                        "categorical_to_onehot"
+                    ],
+                    "FireplaceQu": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "GarageType": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "GarageYrBlt": [
+                        "na_fill_median"
+                    ],
+                    "GarageFinish": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "GarageQual": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "GarageCond": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "PavedDrive": [
+                        "categorical_to_onehot"
+                    ],
+                    "PoolQC": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "Fence": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "MiscFeature": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "SaleType": [
+                        "categorical_to_onehot"
+                    ],
+                    "SaleCondition": [
+                        "categorical_to_onehot"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "scale_log_and_normal"
+                ],
+                "ml_task": "regression"
+            }
+        },
+        {
+            "missing_values": [
+                {
+                    "fill_method": "na_fill_median",
+                    "fill_params": {
+                        "LotFrontage": 70.0,
+                        "Alley": "Grvl",
+                        "MasVnrType": "None",
+                        "MasVnrArea": 0.0,
+                        "BsmtQual": "Gd",
+                        "BsmtCond": "TA",
+                        "BsmtExposure": "No",
+                        "BsmtFinType1": "GLQ",
+                        "BsmtFinType2": "Unf",
+                        "FireplaceQu": "Gd",
+                        "GarageType": "Attchd",
+                        "GarageYrBlt": 1980.0,
+                        "GarageFinish": "Unf",
+                        "GarageQual": "TA",
+                        "GarageCond": "TA",
+                        "PoolQC": "Ex",
+                        "Fence": "MnPrv",
+                        "MiscFeature": "Shed"
+                    },
+                    "datetime_columns": []
+                }
+            ],
+            "categorical": [
+                {
+                    "convert_method": "categorical_to_int",
+                    "convert_params": {
+                        "Street": {
+                            "Grvl": 0,
+                            "Pave": 1
+                        },
+                        "Alley": {
+                            "Grvl": 0,
+                            "Pave": 1
+                        },
+                        "Utilities": {
+                            "AllPub": 0,
+                            "NoSeWa": 1
+                        },
+                        "CentralAir": {
+                            "N": 0,
+                            "Y": 1
+                        }
+                    }
+                },
+                {
+                    "convert_method": "categorical_to_onehot",
+                    "convert_params": {
+                        "MSZoning": {
+                            "new_columns": [
+                                "MSZoning_C (all)",
+                                "MSZoning_FV",
+                                "MSZoning_RH",
+                                "MSZoning_RL",
+                                "MSZoning_RM"
+                            ],
+                            "unique_values": [
+                                "C (all)",
+                                "FV",
+                                "RH",
+                                "RL",
+                                "RM"
+                            ],
+                            "old_column": "MSZoning"
+                        },
+                        "LotShape": {
+                            "new_columns": [
+                                "LotShape_IR1",
+                                "LotShape_IR2",
+                                "LotShape_IR3",
+                                "LotShape_Reg"
+                            ],
+                            "unique_values": [
+                                "IR1",
+                                "IR2",
+                                "IR3",
+                                "Reg"
+                            ],
+                            "old_column": "LotShape"
+                        },
+                        "LandContour": {
+                            "new_columns": [
+                                "LandContour_Bnk",
+                                "LandContour_HLS",
+                                "LandContour_Low",
+                                "LandContour_Lvl"
+                            ],
+                            "unique_values": [
+                                "Bnk",
+                                "HLS",
+                                "Low",
+                                "Lvl"
+                            ],
+                            "old_column": "LandContour"
+                        },
+                        "LotConfig": {
+                            "new_columns": [
+                                "LotConfig_Corner",
+                                "LotConfig_CulDSac",
+                                "LotConfig_FR2",
+                                "LotConfig_FR3",
+                                "LotConfig_Inside"
+                            ],
+                            "unique_values": [
+                                "Corner",
+                                "CulDSac",
+                                "FR2",
+                                "FR3",
+                                "Inside"
+                            ],
+                            "old_column": "LotConfig"
+                        },
+                        "LandSlope": {
+                            "new_columns": [
+                                "LandSlope_Gtl",
+                                "LandSlope_Mod",
+                                "LandSlope_Sev"
+                            ],
+                            "unique_values": [
+                                "Gtl",
+                                "Mod",
+                                "Sev"
+                            ],
+                            "old_column": "LandSlope"
+                        },
+                        "Neighborhood": {
+                            "new_columns": [
+                                "Neighborhood_Blmngtn",
+                                "Neighborhood_Blueste",
+                                "Neighborhood_BrDale",
+                                "Neighborhood_BrkSide",
+                                "Neighborhood_ClearCr",
+                                "Neighborhood_CollgCr",
+                                "Neighborhood_Crawfor",
+                                "Neighborhood_Edwards",
+                                "Neighborhood_Gilbert",
+                                "Neighborhood_IDOTRR",
+                                "Neighborhood_MeadowV",
+                                "Neighborhood_Mitchel",
+                                "Neighborhood_NAmes",
+                                "Neighborhood_NPkVill",
+                                "Neighborhood_NWAmes",
+                                "Neighborhood_NoRidge",
+                                "Neighborhood_NridgHt",
+                                "Neighborhood_OldTown",
+                                "Neighborhood_SWISU",
+                                "Neighborhood_Sawyer",
+                                "Neighborhood_SawyerW",
+                                "Neighborhood_Somerst",
+                                "Neighborhood_StoneBr",
+                                "Neighborhood_Timber",
+                                "Neighborhood_Veenker"
+                            ],
+                            "unique_values": [
+                                "Blmngtn",
+                                "Blueste",
+                                "BrDale",
+                                "BrkSide",
+                                "ClearCr",
+                                "CollgCr",
+                                "Crawfor",
+                                "Edwards",
+                                "Gilbert",
+                                "IDOTRR",
+                                "MeadowV",
+                                "Mitchel",
+                                "NAmes",
+                                "NPkVill",
+                                "NWAmes",
+                                "NoRidge",
+                                "NridgHt",
+                                "OldTown",
+                                "SWISU",
+                                "Sawyer",
+                                "SawyerW",
+                                "Somerst",
+                                "StoneBr",
+                                "Timber",
+                                "Veenker"
+                            ],
+                            "old_column": "Neighborhood"
+                        },
+                        "Condition1": {
+                            "new_columns": [
+                                "Condition1_Artery",
+                                "Condition1_Feedr",
+                                "Condition1_Norm",
+                                "Condition1_PosA",
+                                "Condition1_PosN",
+                                "Condition1_RRAe",
+                                "Condition1_RRAn",
+                                "Condition1_RRNe",
+                                "Condition1_RRNn"
+                            ],
+                            "unique_values": [
+                                "Artery",
+                                "Feedr",
+                                "Norm",
+                                "PosA",
+                                "PosN",
+                                "RRAe",
+                                "RRAn",
+                                "RRNe",
+                                "RRNn"
+                            ],
+                            "old_column": "Condition1"
+                        },
+                        "Condition2": {
+                            "new_columns": [
+                                "Condition2_Artery",
+                                "Condition2_Feedr",
+                                "Condition2_Norm",
+                                "Condition2_PosA",
+                                "Condition2_PosN",
+                                "Condition2_RRNn"
+                            ],
+                            "unique_values": [
+                                "Artery",
+                                "Feedr",
+                                "Norm",
+                                "PosA",
+                                "PosN",
+                                "RRNn"
+                            ],
+                            "old_column": "Condition2"
+                        },
+                        "BldgType": {
+                            "new_columns": [
+                                "BldgType_1Fam",
+                                "BldgType_2fmCon",
+                                "BldgType_Duplex",
+                                "BldgType_Twnhs",
+                                "BldgType_TwnhsE"
+                            ],
+                            "unique_values": [
+                                "1Fam",
+                                "2fmCon",
+                                "Duplex",
+                                "Twnhs",
+                                "TwnhsE"
+                            ],
+                            "old_column": "BldgType"
+                        },
+                        "HouseStyle": {
+                            "new_columns": [
+                                "HouseStyle_1.5Fin",
+                                "HouseStyle_1.5Unf",
+                                "HouseStyle_1Story",
+                                "HouseStyle_2.5Fin",
+                                "HouseStyle_2.5Unf",
+                                "HouseStyle_2Story",
+                                "HouseStyle_SFoyer",
+                                "HouseStyle_SLvl"
+                            ],
+                            "unique_values": [
+                                "1.5Fin",
+                                "1.5Unf",
+                                "1Story",
+                                "2.5Fin",
+                                "2.5Unf",
+                                "2Story",
+                                "SFoyer",
+                                "SLvl"
+                            ],
+                            "old_column": "HouseStyle"
+                        },
+                        "RoofStyle": {
+                            "new_columns": [
+                                "RoofStyle_Flat",
+                                "RoofStyle_Gable",
+                                "RoofStyle_Gambrel",
+                                "RoofStyle_Hip",
+                                "RoofStyle_Mansard"
+                            ],
+                            "unique_values": [
+                                "Flat",
+                                "Gable",
+                                "Gambrel",
+                                "Hip",
+                                "Mansard"
+                            ],
+                            "old_column": "RoofStyle"
+                        },
+                        "RoofMatl": {
+                            "new_columns": [
+                                "RoofMatl_CompShg",
+                                "RoofMatl_Membran",
+                                "RoofMatl_Metal",
+                                "RoofMatl_Tar&Grv",
+                                "RoofMatl_WdShake",
+                                "RoofMatl_WdShngl"
+                            ],
+                            "unique_values": [
+                                "CompShg",
+                                "Membran",
+                                "Metal",
+                                "Tar&Grv",
+                                "WdShake",
+                                "WdShngl"
+                            ],
+                            "old_column": "RoofMatl"
+                        },
+                        "Exterior1st": {
+                            "new_columns": [
+                                "Exterior1st_AsbShng",
+                                "Exterior1st_BrkComm",
+                                "Exterior1st_BrkFace",
+                                "Exterior1st_CemntBd",
+                                "Exterior1st_HdBoard",
+                                "Exterior1st_MetalSd",
+                                "Exterior1st_Plywood",
+                                "Exterior1st_Stucco",
+                                "Exterior1st_VinylSd",
+                                "Exterior1st_Wd Sdng",
+                                "Exterior1st_WdShing"
+                            ],
+                            "unique_values": [
+                                "AsbShng",
+                                "BrkComm",
+                                "BrkFace",
+                                "CemntBd",
+                                "HdBoard",
+                                "MetalSd",
+                                "Plywood",
+                                "Stucco",
+                                "VinylSd",
+                                "Wd Sdng",
+                                "WdShing"
+                            ],
+                            "old_column": "Exterior1st"
+                        },
+                        "Exterior2nd": {
+                            "new_columns": [
+                                "Exterior2nd_AsbShng",
+                                "Exterior2nd_AsphShn",
+                                "Exterior2nd_Brk Cmn",
+                                "Exterior2nd_BrkFace",
+                                "Exterior2nd_CmentBd",
+                                "Exterior2nd_HdBoard",
+                                "Exterior2nd_ImStucc",
+                                "Exterior2nd_MetalSd",
+                                "Exterior2nd_Other",
+                                "Exterior2nd_Plywood",
+                                "Exterior2nd_Stone",
+                                "Exterior2nd_Stucco",
+                                "Exterior2nd_VinylSd",
+                                "Exterior2nd_Wd Sdng",
+                                "Exterior2nd_Wd Shng"
+                            ],
+                            "unique_values": [
+                                "AsbShng",
+                                "AsphShn",
+                                "Brk Cmn",
+                                "BrkFace",
+                                "CmentBd",
+                                "HdBoard",
+                                "ImStucc",
+                                "MetalSd",
+                                "Other",
+                                "Plywood",
+                                "Stone",
+                                "Stucco",
+                                "VinylSd",
+                                "Wd Sdng",
+                                "Wd Shng"
+                            ],
+                            "old_column": "Exterior2nd"
+                        },
+                        "MasVnrType": {
+                            "new_columns": [
+                                "MasVnrType_BrkCmn",
+                                "MasVnrType_BrkFace",
+                                "MasVnrType_None",
+                                "MasVnrType_Stone"
+                            ],
+                            "unique_values": [
+                                "BrkCmn",
+                                "BrkFace",
+                                "None",
+                                "Stone"
+                            ],
+                            "old_column": "MasVnrType"
+                        },
+                        "ExterQual": {
+                            "new_columns": [
+                                "ExterQual_Ex",
+                                "ExterQual_Fa",
+                                "ExterQual_Gd",
+                                "ExterQual_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "TA"
+                            ],
+                            "old_column": "ExterQual"
+                        },
+                        "ExterCond": {
+                            "new_columns": [
+                                "ExterCond_Ex",
+                                "ExterCond_Fa",
+                                "ExterCond_Gd",
+                                "ExterCond_Po",
+                                "ExterCond_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "ExterCond"
+                        },
+                        "Foundation": {
+                            "new_columns": [
+                                "Foundation_BrkTil",
+                                "Foundation_CBlock",
+                                "Foundation_PConc",
+                                "Foundation_Slab",
+                                "Foundation_Stone",
+                                "Foundation_Wood"
+                            ],
+                            "unique_values": [
+                                "BrkTil",
+                                "CBlock",
+                                "PConc",
+                                "Slab",
+                                "Stone",
+                                "Wood"
+                            ],
+                            "old_column": "Foundation"
+                        },
+                        "BsmtQual": {
+                            "new_columns": [
+                                "BsmtQual_Ex",
+                                "BsmtQual_Fa",
+                                "BsmtQual_Gd",
+                                "BsmtQual_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "TA"
+                            ],
+                            "old_column": "BsmtQual"
+                        },
+                        "BsmtCond": {
+                            "new_columns": [
+                                "BsmtCond_Fa",
+                                "BsmtCond_Gd",
+                                "BsmtCond_Po",
+                                "BsmtCond_TA"
+                            ],
+                            "unique_values": [
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "BsmtCond"
+                        },
+                        "BsmtExposure": {
+                            "new_columns": [
+                                "BsmtExposure_Av",
+                                "BsmtExposure_Gd",
+                                "BsmtExposure_Mn",
+                                "BsmtExposure_No"
+                            ],
+                            "unique_values": [
+                                "Av",
+                                "Gd",
+                                "Mn",
+                                "No"
+                            ],
+                            "old_column": "BsmtExposure"
+                        },
+                        "BsmtFinType1": {
+                            "new_columns": [
+                                "BsmtFinType1_ALQ",
+                                "BsmtFinType1_BLQ",
+                                "BsmtFinType1_GLQ",
+                                "BsmtFinType1_LwQ",
+                                "BsmtFinType1_Rec",
+                                "BsmtFinType1_Unf"
+                            ],
+                            "unique_values": [
+                                "ALQ",
+                                "BLQ",
+                                "GLQ",
+                                "LwQ",
+                                "Rec",
+                                "Unf"
+                            ],
+                            "old_column": "BsmtFinType1"
+                        },
+                        "BsmtFinType2": {
+                            "new_columns": [
+                                "BsmtFinType2_ALQ",
+                                "BsmtFinType2_BLQ",
+                                "BsmtFinType2_GLQ",
+                                "BsmtFinType2_LwQ",
+                                "BsmtFinType2_Rec",
+                                "BsmtFinType2_Unf"
+                            ],
+                            "unique_values": [
+                                "ALQ",
+                                "BLQ",
+                                "GLQ",
+                                "LwQ",
+                                "Rec",
+                                "Unf"
+                            ],
+                            "old_column": "BsmtFinType2"
+                        },
+                        "Heating": {
+                            "new_columns": [
+                                "Heating_GasA",
+                                "Heating_GasW",
+                                "Heating_Grav",
+                                "Heating_Wall"
+                            ],
+                            "unique_values": [
+                                "GasA",
+                                "GasW",
+                                "Grav",
+                                "Wall"
+                            ],
+                            "old_column": "Heating"
+                        },
+                        "HeatingQC": {
+                            "new_columns": [
+                                "HeatingQC_Ex",
+                                "HeatingQC_Fa",
+                                "HeatingQC_Gd",
+                                "HeatingQC_Po",
+                                "HeatingQC_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "HeatingQC"
+                        },
+                        "Electrical": {
+                            "new_columns": [
+                                "Electrical_FuseA",
+                                "Electrical_FuseF",
+                                "Electrical_FuseP",
+                                "Electrical_Mix",
+                                "Electrical_SBrkr"
+                            ],
+                            "unique_values": [
+                                "FuseA",
+                                "FuseF",
+                                "FuseP",
+                                "Mix",
+                                "SBrkr"
+                            ],
+                            "old_column": "Electrical"
+                        },
+                        "KitchenQual": {
+                            "new_columns": [
+                                "KitchenQual_Ex",
+                                "KitchenQual_Fa",
+                                "KitchenQual_Gd",
+                                "KitchenQual_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "TA"
+                            ],
+                            "old_column": "KitchenQual"
+                        },
+                        "Functional": {
+                            "new_columns": [
+                                "Functional_Maj1",
+                                "Functional_Maj2",
+                                "Functional_Min1",
+                                "Functional_Min2",
+                                "Functional_Mod",
+                                "Functional_Sev",
+                                "Functional_Typ"
+                            ],
+                            "unique_values": [
+                                "Maj1",
+                                "Maj2",
+                                "Min1",
+                                "Min2",
+                                "Mod",
+                                "Sev",
+                                "Typ"
+                            ],
+                            "old_column": "Functional"
+                        },
+                        "FireplaceQu": {
+                            "new_columns": [
+                                "FireplaceQu_Ex",
+                                "FireplaceQu_Fa",
+                                "FireplaceQu_Gd",
+                                "FireplaceQu_Po",
+                                "FireplaceQu_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "FireplaceQu"
+                        },
+                        "GarageType": {
+                            "new_columns": [
+                                "GarageType_2Types",
+                                "GarageType_Attchd",
+                                "GarageType_Basment",
+                                "GarageType_BuiltIn",
+                                "GarageType_CarPort",
+                                "GarageType_Detchd"
+                            ],
+                            "unique_values": [
+                                "2Types",
+                                "Attchd",
+                                "Basment",
+                                "BuiltIn",
+                                "CarPort",
+                                "Detchd"
+                            ],
+                            "old_column": "GarageType"
+                        },
+                        "GarageFinish": {
+                            "new_columns": [
+                                "GarageFinish_Fin",
+                                "GarageFinish_RFn",
+                                "GarageFinish_Unf"
+                            ],
+                            "unique_values": [
+                                "Fin",
+                                "RFn",
+                                "Unf"
+                            ],
+                            "old_column": "GarageFinish"
+                        },
+                        "GarageQual": {
+                            "new_columns": [
+                                "GarageQual_Ex",
+                                "GarageQual_Fa",
+                                "GarageQual_Gd",
+                                "GarageQual_Po",
+                                "GarageQual_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "GarageQual"
+                        },
+                        "GarageCond": {
+                            "new_columns": [
+                                "GarageCond_Ex",
+                                "GarageCond_Fa",
+                                "GarageCond_Gd",
+                                "GarageCond_Po",
+                                "GarageCond_TA"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa",
+                                "Gd",
+                                "Po",
+                                "TA"
+                            ],
+                            "old_column": "GarageCond"
+                        },
+                        "PavedDrive": {
+                            "new_columns": [
+                                "PavedDrive_N",
+                                "PavedDrive_P",
+                                "PavedDrive_Y"
+                            ],
+                            "unique_values": [
+                                "N",
+                                "P",
+                                "Y"
+                            ],
+                            "old_column": "PavedDrive"
+                        },
+                        "PoolQC": {
+                            "new_columns": [
+                                "PoolQC_Fa"
+                            ],
+                            "unique_values": [
+                                "Ex",
+                                "Fa"
+                            ],
+                            "old_column": "PoolQC"
+                        },
+                        "Fence": {
+                            "new_columns": [
+                                "Fence_GdPrv",
+                                "Fence_GdWo",
+                                "Fence_MnPrv",
+                                "Fence_MnWw"
+                            ],
+                            "unique_values": [
+                                "GdPrv",
+                                "GdWo",
+                                "MnPrv",
+                                "MnWw"
+                            ],
+                            "old_column": "Fence"
+                        },
+                        "MiscFeature": {
+                            "new_columns": [
+                                "MiscFeature_Gar2",
+                                "MiscFeature_Othr",
+                                "MiscFeature_Shed"
+                            ],
+                            "unique_values": [
+                                "Gar2",
+                                "Othr",
+                                "Shed"
+                            ],
+                            "old_column": "MiscFeature"
+                        },
+                        "SaleType": {
+                            "new_columns": [
+                                "SaleType_COD",
+                                "SaleType_CWD",
+                                "SaleType_Con",
+                                "SaleType_ConLD",
+                                "SaleType_ConLI",
+                                "SaleType_ConLw",
+                                "SaleType_New",
+                                "SaleType_Oth",
+                                "SaleType_WD"
+                            ],
+                            "unique_values": [
+                                "COD",
+                                "CWD",
+                                "Con",
+                                "ConLD",
+                                "ConLI",
+                                "ConLw",
+                                "New",
+                                "Oth",
+                                "WD"
+                            ],
+                            "old_column": "SaleType"
+                        },
+                        "SaleCondition": {
+                            "new_columns": [
+                                "SaleCondition_Abnorml",
+                                "SaleCondition_AdjLand",
+                                "SaleCondition_Alloca",
+                                "SaleCondition_Family",
+                                "SaleCondition_Normal",
+                                "SaleCondition_Partial"
+                            ],
+                            "unique_values": [
+                                "Abnorml",
+                                "AdjLand",
+                                "Alloca",
+                                "Family",
+                                "Normal",
+                                "Partial"
+                            ],
+                            "old_column": "SaleCondition"
+                        }
+                    }
+                }
+            ],
+            "scale_y": {
+                "scale": [
+                    0.6853829437843232
+                ],
+                "mean": [
+                    11.748514743505206
+                ],
+                "var": [
+                    0.4697497796304647
+                ],
+                "n_samples_seen": 974,
+                "n_features_in": 1,
+                "columns": [
+                    "target"
+                ],
+                "scale_method": "scale_log_and_normal",
+                "X_min_values": [
+                    34900.0
+                ]
+            },
+            "ml_task": "regression",
+            "params": {
+                "columns_preprocessing": {
+                    "MSZoning": [
+                        "categorical_to_onehot"
+                    ],
+                    "LotFrontage": [
+                        "na_fill_median"
+                    ],
+                    "Street": [
+                        "categorical_to_int"
+                    ],
+                    "Alley": [
+                        "na_fill_median",
+                        "categorical_to_int"
+                    ],
+                    "LotShape": [
+                        "categorical_to_onehot"
+                    ],
+                    "LandContour": [
+                        "categorical_to_onehot"
+                    ],
+                    "Utilities": [
+                        "categorical_to_int"
+                    ],
+                    "LotConfig": [
+                        "categorical_to_onehot"
+                    ],
+                    "LandSlope": [
+                        "categorical_to_onehot"
+                    ],
+                    "Neighborhood": [
+                        "categorical_to_onehot"
+                    ],
+                    "Condition1": [
+                        "categorical_to_onehot"
+                    ],
+                    "Condition2": [
+                        "categorical_to_onehot"
+                    ],
+                    "BldgType": [
+                        "categorical_to_onehot"
+                    ],
+                    "HouseStyle": [
+                        "categorical_to_onehot"
+                    ],
+                    "RoofStyle": [
+                        "categorical_to_onehot"
+                    ],
+                    "RoofMatl": [
+                        "categorical_to_onehot"
+                    ],
+                    "Exterior1st": [
+                        "categorical_to_onehot"
+                    ],
+                    "Exterior2nd": [
+                        "categorical_to_onehot"
+                    ],
+                    "MasVnrType": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "MasVnrArea": [
+                        "na_fill_median"
+                    ],
+                    "ExterQual": [
+                        "categorical_to_onehot"
+                    ],
+                    "ExterCond": [
+                        "categorical_to_onehot"
+                    ],
+                    "Foundation": [
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtQual": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtCond": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtExposure": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtFinType1": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "BsmtFinType2": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "Heating": [
+                        "categorical_to_onehot"
+                    ],
+                    "HeatingQC": [
+                        "categorical_to_onehot"
+                    ],
+                    "CentralAir": [
+                        "categorical_to_int"
+                    ],
+                    "Electrical": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "KitchenQual": [
+                        "categorical_to_onehot"
+                    ],
+                    "Functional": [
+                        "categorical_to_onehot"
+                    ],
+                    "FireplaceQu": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "GarageType": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "GarageYrBlt": [
+                        "na_fill_median"
+                    ],
+                    "GarageFinish": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "GarageQual": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "GarageCond": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "PavedDrive": [
+                        "categorical_to_onehot"
+                    ],
+                    "PoolQC": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "Fence": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "MiscFeature": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "SaleType": [
+                        "categorical_to_onehot"
+                    ],
+                    "SaleCondition": [
+                        "categorical_to_onehot"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "scale_log_and_normal"
+                ],
+                "ml_task": "regression"
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "1.2.0",
+            "algorithm_name": "Extreme Gradient Boosting",
+            "algorithm_short_name": "Xgboost",
+            "uid": "2151497e-981f-4f69-b63c-d92b86c4d5a2",
+            "params": {
+                "model_type": "Xgboost",
+                "ml_task": "regression",
+                "objective": "reg:squarederror",
+                "eval_metric": "rmse",
+                "eta": 0.1,
+                "max_depth": 4,
+                "min_child_weight": 1,
+                "subsample": 1.0,
+                "colsample_bytree": 1.0,
+                "seed": 1,
+                "explain_level": 2
+            },
+            "best_ntree_limit": 22
+        },
+        {
+            "library_version": "1.2.0",
+            "algorithm_name": "Extreme Gradient Boosting",
+            "algorithm_short_name": "Xgboost",
+            "uid": "44ba61cf-d3b0-472d-b72c-d56f53796c11",
+            "params": {
+                "model_type": "Xgboost",
+                "ml_task": "regression",
+                "objective": "reg:squarederror",
+                "eval_metric": "rmse",
+                "eta": 0.1,
+                "max_depth": 4,
+                "min_child_weight": 1,
+                "subsample": 1.0,
+                "colsample_bytree": 1.0,
+                "seed": 1,
+                "explain_level": 2
+            },
+            "best_ntree_limit": 172
+        },
+        {
+            "library_version": "1.2.0",
+            "algorithm_name": "Extreme Gradient Boosting",
+            "algorithm_short_name": "Xgboost",
+            "uid": "c08f624b-7cf7-4059-9f5f-d8ebf7be53f3",
+            "params": {
+                "model_type": "Xgboost",
+                "ml_task": "regression",
+                "objective": "reg:squarederror",
+                "eval_metric": "rmse",
+                "eta": 0.1,
+                "max_depth": 4,
+                "min_child_weight": 1,
+                "subsample": 1.0,
+                "colsample_bytree": 1.0,
+                "seed": 1,
+                "explain_level": 2
+            },
+            "best_ntree_limit": 15
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_rounds": 10000,
+            "early_stopping_rounds": 50,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "MSZoning": [
+                    "categorical_to_onehot"
+                ],
+                "LotFrontage": [
+                    "na_fill_median"
+                ],
+                "Street": [
+                    "categorical_to_int"
+                ],
+                "Alley": [
+                    "na_fill_median",
+                    "categorical_to_int"
+                ],
+                "LotShape": [
+                    "categorical_to_onehot"
+                ],
+                "LandContour": [
+                    "categorical_to_onehot"
+                ],
+                "Utilities": [
+                    "categorical_to_int"
+                ],
+                "LotConfig": [
+                    "categorical_to_onehot"
+                ],
+                "LandSlope": [
+                    "categorical_to_onehot"
+                ],
+                "Neighborhood": [
+                    "categorical_to_onehot"
+                ],
+                "Condition1": [
+                    "categorical_to_onehot"
+                ],
+                "Condition2": [
+                    "categorical_to_onehot"
+                ],
+                "BldgType": [
+                    "categorical_to_onehot"
+                ],
+                "HouseStyle": [
+                    "categorical_to_onehot"
+                ],
+                "RoofStyle": [
+                    "categorical_to_onehot"
+                ],
+                "RoofMatl": [
+                    "categorical_to_onehot"
+                ],
+                "Exterior1st": [
+                    "categorical_to_onehot"
+                ],
+                "Exterior2nd": [
+                    "categorical_to_onehot"
+                ],
+                "MasVnrType": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "MasVnrArea": [
+                    "na_fill_median"
+                ],
+                "ExterQual": [
+                    "categorical_to_onehot"
+                ],
+                "ExterCond": [
+                    "categorical_to_onehot"
+                ],
+                "Foundation": [
+                    "categorical_to_onehot"
+                ],
+                "BsmtQual": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "BsmtCond": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "BsmtExposure": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "BsmtFinType1": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "BsmtFinType2": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "Heating": [
+                    "categorical_to_onehot"
+                ],
+                "HeatingQC": [
+                    "categorical_to_onehot"
+                ],
+                "CentralAir": [
+                    "categorical_to_int"
+                ],
+                "Electrical": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "KitchenQual": [
+                    "categorical_to_onehot"
+                ],
+                "Functional": [
+                    "categorical_to_onehot"
+                ],
+                "FireplaceQu": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "GarageType": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "GarageYrBlt": [
+                    "na_fill_median"
+                ],
+                "GarageFinish": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "GarageQual": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "GarageCond": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "PavedDrive": [
+                    "categorical_to_onehot"
+                ],
+                "PoolQC": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "Fence": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "MiscFeature": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "SaleType": [
+                    "categorical_to_onehot"
+                ],
+                "SaleCondition": [
+                    "categorical_to_onehot"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude",
+                "scale_log_and_normal"
+            ],
+            "ml_task": "regression"
+        },
+        "validation_strategy": {
+            "validation_type": "kfold",
+            "k_folds": 3,
+            "shuffle": false,
+            "X_path": "AutoML_1/X.parquet",
+            "y_path": "AutoML_1/y.parquet",
+            "results_path": "AutoML_1"
+        },
+        "learner": {
+            "model_type": "Xgboost",
+            "ml_task": "regression",
+            "objective": "reg:squarederror",
+            "eval_metric": "rmse",
+            "eta": 0.1,
+            "max_depth": 4,
+            "min_child_weight": 1,
+            "subsample": 1.0,
+            "colsample_bytree": 1.0,
+            "seed": 1,
+            "explain_level": 2
+        },
+        "ml_task": "regression",
+        "explain_level": 2,
+        "name": "1_Default_Xgboost",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null
+    },
+    "saved": [
+        "AutoML_1/1_Default_Xgboost/learner_1.xgboost",
+        "AutoML_1/1_Default_Xgboost/learner_2.xgboost",
+        "AutoML_1/1_Default_Xgboost/learner_3.xgboost"
+    ],
+    "predictions_fname": "AutoML_1/1_Default_Xgboost/predictions_out_of_folds.csv",
+    "metric_name": "rmse",
+    "final_loss": 35006.549576639634,
+    "train_time": 247.54850935935974,
+    "is_stacked": false
+}

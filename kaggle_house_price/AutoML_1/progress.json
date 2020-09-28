@@ -1,0 +1,448 @@
+{
+    "fit_level": "finished",
+    "time_controller": {
+        "total_time_limit": 30,
+        "model_time_limit": null,
+        "steps": [
+            "simple_algorithms",
+            "default_algorithms",
+            "golden_features",
+            "ensemble"
+        ],
+        "algorithms": [
+            "Xgboost"
+        ],
+        "spend": [
+            {
+                "model_name": "prepare_data",
+                "model_type": "prepare_data",
+                "fit_level": "prepare_data",
+                "train_time": 18.932361841201782
+            },
+            {
+                "model_name": "1_Default_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "default_algorithms",
+                "train_time": 248.85428833961487
+            }
+        ],
+        "is_hill_climbing": false,
+        "is_stacking": false
+    },
+    "all_params": {
+        "default_algorithms": [
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "MSZoning": [
+                            "categorical_to_onehot"
+                        ],
+                        "LotFrontage": [
+                            "na_fill_median"
+                        ],
+                        "Street": [
+                            "categorical_to_int"
+                        ],
+                        "Alley": [
+                            "na_fill_median",
+                            "categorical_to_int"
+                        ],
+                        "LotShape": [
+                            "categorical_to_onehot"
+                        ],
+                        "LandContour": [
+                            "categorical_to_onehot"
+                        ],
+                        "Utilities": [
+                            "categorical_to_int"
+                        ],
+                        "LotConfig": [
+                            "categorical_to_onehot"
+                        ],
+                        "LandSlope": [
+                            "categorical_to_onehot"
+                        ],
+                        "Neighborhood": [
+                            "categorical_to_onehot"
+                        ],
+                        "Condition1": [
+                            "categorical_to_onehot"
+                        ],
+                        "Condition2": [
+                            "categorical_to_onehot"
+                        ],
+                        "BldgType": [
+                            "categorical_to_onehot"
+                        ],
+                        "HouseStyle": [
+                            "categorical_to_onehot"
+                        ],
+                        "RoofStyle": [
+                            "categorical_to_onehot"
+                        ],
+                        "RoofMatl": [
+                            "categorical_to_onehot"
+                        ],
+                        "Exterior1st": [
+                            "categorical_to_onehot"
+                        ],
+                        "Exterior2nd": [
+                            "categorical_to_onehot"
+                        ],
+                        "MasVnrType": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "MasVnrArea": [
+                            "na_fill_median"
+                        ],
+                        "ExterQual": [
+                            "categorical_to_onehot"
+                        ],
+                        "ExterCond": [
+                            "categorical_to_onehot"
+                        ],
+                        "Foundation": [
+                            "categorical_to_onehot"
+                        ],
+                        "BsmtQual": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "BsmtCond": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "BsmtExposure": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "BsmtFinType1": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "BsmtFinType2": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "Heating": [
+                            "categorical_to_onehot"
+                        ],
+                        "HeatingQC": [
+                            "categorical_to_onehot"
+                        ],
+                        "CentralAir": [
+                            "categorical_to_int"
+                        ],
+                        "Electrical": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "KitchenQual": [
+                            "categorical_to_onehot"
+                        ],
+                        "Functional": [
+                            "categorical_to_onehot"
+                        ],
+                        "FireplaceQu": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "GarageType": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "GarageYrBlt": [
+                            "na_fill_median"
+                        ],
+                        "GarageFinish": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "GarageQual": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "GarageCond": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "PavedDrive": [
+                            "categorical_to_onehot"
+                        ],
+                        "PoolQC": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "Fence": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "MiscFeature": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "SaleType": [
+                            "categorical_to_onehot"
+                        ],
+                        "SaleCondition": [
+                            "categorical_to_onehot"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "scale_log_and_normal"
+                    ],
+                    "ml_task": "regression"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 3,
+                    "shuffle": false,
+                    "X_path": "AutoML_1/X.parquet",
+                    "y_path": "AutoML_1/y.parquet",
+                    "results_path": "AutoML_1"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "regression",
+                    "objective": "reg:squarederror",
+                    "eval_metric": "rmse",
+                    "eta": 0.1,
+                    "max_depth": 4,
+                    "min_child_weight": 1,
+                    "subsample": 1.0,
+                    "colsample_bytree": 1.0,
+                    "seed": 1,
+                    "explain_level": 2
+                },
+                "ml_task": "regression",
+                "explain_level": 2,
+                "name": "1_Default_Xgboost",
+                "status": "trained",
+                "final_loss": 35006.549576639634,
+                "train_time": 248.85428833961487
+            }
+        ],
+        "golden_features": [
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "MSZoning": [
+                            "categorical_to_onehot"
+                        ],
+                        "LotFrontage": [
+                            "na_fill_median"
+                        ],
+                        "Street": [
+                            "categorical_to_int"
+                        ],
+                        "Alley": [
+                            "na_fill_median",
+                            "categorical_to_int"
+                        ],
+                        "LotShape": [
+                            "categorical_to_onehot"
+                        ],
+                        "LandContour": [
+                            "categorical_to_onehot"
+                        ],
+                        "Utilities": [
+                            "categorical_to_int"
+                        ],
+                        "LotConfig": [
+                            "categorical_to_onehot"
+                        ],
+                        "LandSlope": [
+                            "categorical_to_onehot"
+                        ],
+                        "Neighborhood": [
+                            "categorical_to_onehot"
+                        ],
+                        "Condition1": [
+                            "categorical_to_onehot"
+                        ],
+                        "Condition2": [
+                            "categorical_to_onehot"
+                        ],
+                        "BldgType": [
+                            "categorical_to_onehot"
+                        ],
+                        "HouseStyle": [
+                            "categorical_to_onehot"
+                        ],
+                        "RoofStyle": [
+                            "categorical_to_onehot"
+                        ],
+                        "RoofMatl": [
+                            "categorical_to_onehot"
+                        ],
+                        "Exterior1st": [
+                            "categorical_to_onehot"
+                        ],
+                        "Exterior2nd": [
+                            "categorical_to_onehot"
+                        ],
+                        "MasVnrType": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "MasVnrArea": [
+                            "na_fill_median"
+                        ],
+                        "ExterQual": [
+                            "categorical_to_onehot"
+                        ],
+                        "ExterCond": [
+                            "categorical_to_onehot"
+                        ],
+                        "Foundation": [
+                            "categorical_to_onehot"
+                        ],
+                        "BsmtQual": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "BsmtCond": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "BsmtExposure": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "BsmtFinType1": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "BsmtFinType2": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "Heating": [
+                            "categorical_to_onehot"
+                        ],
+                        "HeatingQC": [
+                            "categorical_to_onehot"
+                        ],
+                        "CentralAir": [
+                            "categorical_to_int"
+                        ],
+                        "Electrical": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "KitchenQual": [
+                            "categorical_to_onehot"
+                        ],
+                        "Functional": [
+                            "categorical_to_onehot"
+                        ],
+                        "FireplaceQu": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "GarageType": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "GarageYrBlt": [
+                            "na_fill_median"
+                        ],
+                        "GarageFinish": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "GarageQual": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "GarageCond": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "PavedDrive": [
+                            "categorical_to_onehot"
+                        ],
+                        "PoolQC": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "Fence": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "MiscFeature": [
+                            "na_fill_median",
+                            "categorical_to_onehot"
+                        ],
+                        "SaleType": [
+                            "categorical_to_onehot"
+                        ],
+                        "SaleCondition": [
+                            "categorical_to_onehot"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "scale_log_and_normal"
+                    ],
+                    "ml_task": "regression",
+                    "golden_features": {
+                        "results_path": "AutoML_1",
+                        "ml_task": "regression"
+                    }
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 3,
+                    "shuffle": false,
+                    "X_path": "AutoML_1/X.parquet",
+                    "y_path": "AutoML_1/y.parquet",
+                    "results_path": "AutoML_1"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "regression",
+                    "objective": "reg:squarederror",
+                    "eval_metric": "rmse",
+                    "eta": 0.1,
+                    "max_depth": 4,
+                    "min_child_weight": 1,
+                    "subsample": 1.0,
+                    "colsample_bytree": 1.0,
+                    "seed": 1,
+                    "explain_level": 2
+                },
+                "ml_task": "regression",
+                "explain_level": 2,
+                "name": "1_Default_Xgboost_GoldenFeatures",
+                "status": "skipped",
+                "final_loss": 35006.549576639634,
+                "train_time": 248.85428833961487
+            }
+        ],
+        "ensemble": [
+            {
+                "model_type": "ensemble",
+                "is_stacked": false,
+                "name": "Ensemble",
+                "status": "skipped",
+                "final_loss": 35006.549576639634,
+                "train_time": 248.85428833961487
+            }
+        ]
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "mode": "Explain",
+    "ml_task": "regression",
+    "results_path": "AutoML_1",
+    "total_time_limit": 30,
+    "model_time_limit": null,
+    "algorithms": [
+        "Xgboost"
+    ],
+    "train_ensemble": true,
+    "stack_models": false,
+    "eval_metric": "rmse",
+    "validation_strategy": {
+        "validation_type": "kfold",
+        "k_folds": 3,
+        "shuffle": false,
+        "X_path": "AutoML_1/X.parquet",
+        "y_path": "AutoML_1/y.parquet",
+        "results_path": "AutoML_1"
+    },
+    "verbose": 1,
+    "explain_level": 2,
+    "golden_features": true,
+    "features_selection": false,
+    "start_random_models": 1,
+    "hill_climbing_steps": 0,
+    "top_models_to_improve": 0,
+    "random_state": 1234,
+    "saved": [
+        "AutoML_1/1_Default_Xgboost"
+    ]
+}
